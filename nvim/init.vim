@@ -52,7 +52,9 @@ call plug#begin('~/.vim/plugged')
         Plug 'sindrets/diffview.nvim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'neoclide/coc-highlight'
-    Plug 'rust-lang/rust.vim'
+    "Plug 'rust-lang/rust.vim'
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'simrat39/rust-tools.nvim'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim' 
@@ -76,6 +78,10 @@ let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
 
 
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
 inoremap <silent><expr> <S-TAB> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<TAB>"
 "Shift + K to show documentation for a function
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -113,6 +119,13 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" Applying codeAction to the selected region.
+" Example: `<leader>Aap` for current paragraph
+xmap <leader>A  <Plug>(coc-codeaction-selected)
+nmap <leader>A  <Plug>(coc-codeaction-selected)
+
+" Apply codeAction to current cursor position
+nmap <leader>a  <Plug>(coc-codeaction-cursor)
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
