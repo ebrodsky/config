@@ -45,9 +45,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'shaunsingh/solarized.nvim'                    "THEME
     Plug 'overcache/NeoSolarized'                      "THEME
     Plug 'EdenEast/nightfox.nvim'                      "THEME
-    "Plug 'vim-airline/vim-airline'
-    "Plug 'vim-airline/vim-airline-themes'
-    Plug 'freddiehaddad/feline.nvim'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    "Plug 'freddiehaddad/feline.nvim'
     Plug 'NeogitOrg/neogit' 
         Plug 'sindrets/diffview.nvim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -77,6 +77,7 @@ let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
 
+let g:airline_theme='base16_nord'
 
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
@@ -191,7 +192,7 @@ require("nvim-tree").setup({
   },
 })
 
-require('feline').setup()
+--require('feline').setup()
 EOF
 
 
