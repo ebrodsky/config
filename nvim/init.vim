@@ -67,6 +67,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'ray-x/go.nvim'
     Plug 'ray-x/guihua.lua'
     Plug 'nvim-tree/nvim-tree.lua'
+    Plug 'tpope/vim-fugitive'
+    Plug 'lewis6991/gitsigns.nvim'
 call plug#end()
 
 "let g:everforest_background = 'hard'
@@ -193,6 +195,7 @@ require("nvim-tree").setup({
 })
 
 --require('feline').setup()
+require('gitsigns').setup()
 EOF
 
 
