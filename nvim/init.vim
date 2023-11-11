@@ -47,12 +47,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'EdenEast/nightfox.nvim'                      "THEME
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    "Plug 'freddiehaddad/feline.nvim'
     Plug 'NeogitOrg/neogit' 
         Plug 'sindrets/diffview.nvim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'neoclide/coc-highlight'
-    "Plug 'rust-lang/rust.vim'
     Plug 'neovim/nvim-lspconfig'
     Plug 'simrat39/rust-tools.nvim'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -196,6 +194,7 @@ require("nvim-tree").setup({
 
 --require('feline').setup()
 require('gitsigns').setup()
+require'lspconfig'.pyright.setup{}
 EOF
 
 
