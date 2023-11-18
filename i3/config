@@ -79,7 +79,8 @@ bindsym $mod+d exec --no-startup-id rofi -show-icons -show drun -run-shell-comma
 #bindsym $mod+l exec "i3lock -i ~/.config/i3/fog_forest_2.png"
 bindsym $mod+l exec betterlockscreen -l dim
 
-bindsym $mod+m move workspace to output up
+#bindsym $mod+m move workspace to output up
+bindsym $mod+m move workspace to output right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
