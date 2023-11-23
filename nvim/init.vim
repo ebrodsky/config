@@ -69,15 +69,16 @@ call plug#begin('~/.vim/plugged')
     Plug 'lewis6991/gitsigns.nvim'
 call plug#end()
 
-"let g:everforest_background = 'hard'
-"colorscheme gruvbox-material
+let g:everforest_background = 'hard'
+colorscheme gruvbox-material
 "colorscheme everforest
-colorscheme nordic
+"colorscheme nordic
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
 
-let g:airline_theme='base16_nord'
+"let g:airline_theme='base16_nord'
+let g:airline_theme='base16_gruvbox_dark_medium'
 
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :

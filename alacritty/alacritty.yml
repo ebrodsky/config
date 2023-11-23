@@ -1264,6 +1264,6 @@ schemes:
       - { index: 17, color: '0xcb7985' }
 # Apply
 #colors: *everforest_dark_hard
-#colors: *gruvbox_material_medium_dark
-colors: *nord 
+colors: *gruvbox_material_medium_dark
+#colors: *nord 
 #colors: *terafox
