@@ -1,5 +1,8 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
+# Some alacritty themes:
+# https://unpkg.com/browse/alacritty-themes@4.1.5/themes/
+
 # Import additional configuration files
 #
 # Imports are loaded in order, skipping all missing files, with the importing
@@ -12,8 +15,9 @@
 #  - /path/to/alacritty.yml
 import:
   #- ~/.config/alacritty/alacritty-colorscheme/themes/solarized_dark.yaml
-  #-  ~/.config/alacritty/alacritty-colorscheme/themes/solarized_light.yaml
-  - ~/.config/alacritty/alacritty-colorscheme/themes/gruvbox_dark.yaml
+  #- ~/.config/alacritty/alacritty-colorscheme/themes/solarized_light.yaml
+  #- ~/.config/alacritty/alacritty-colorscheme/themes/gruvbox_dark.yaml
+  - ~/.config/alacritty/alacritty-colorscheme/themes/ayu_dark.yaml
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
@@ -1264,6 +1268,7 @@ schemes:
       - { index: 17, color: '0xcb7985' }
 # Apply
 #colors: *everforest_dark_hard
-colors: *gruvbox_material_medium_dark
+#colors: *gruvbox_material_medium_dark
 #colors: *nord 
 #colors: *terafox
+  colors: ayu_dark

@@ -13,7 +13,7 @@ set cindent
 set nocompatible
 set colorcolumn=100
 set smartcase
-set background=dark
+"set background=dark
 set termguicolors
 set cursorline
 set laststatus=2
@@ -45,6 +45,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'shaunsingh/solarized.nvim'                    "THEME
     Plug 'overcache/NeoSolarized'                      "THEME
     Plug 'EdenEast/nightfox.nvim'                      "THEME
+    Plug 'ayu-theme/ayu-vim'                            "THEME
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'NeogitOrg/neogit' 
@@ -69,16 +70,21 @@ call plug#begin('~/.vim/plugged')
     Plug 'lewis6991/gitsigns.nvim'
 call plug#end()
 
-let g:everforest_background = 'hard'
-colorscheme gruvbox-material
+"let g:everforest_background = 'hard'
+"colorscheme gruvbox-material
 "colorscheme everforest
 "colorscheme nordic
+
+"for ayu theme:
+let ayucolor="dark" "light or mirage or dark
+colorscheme ayu
+
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
 
 "let g:airline_theme='base16_nord'
-let g:airline_theme='base16_gruvbox_dark_medium'
+"let g:airline_theme='base16_gruvbox_dark_medium'
 
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
