@@ -1,4 +1,4 @@
-filetype off
+filetype on
 syntax enable
 set number
 "set relativenumber
@@ -75,9 +75,11 @@ call plug#end()
 "colorscheme everforest
 "colorscheme nordic
 
+"set background=light
 "for ayu theme:
 let ayucolor="dark" "light or mirage or dark
 colorscheme ayu
+"colorscheme gruvbox-material
 
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
