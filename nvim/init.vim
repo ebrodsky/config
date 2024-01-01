@@ -40,7 +40,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'rmehri01/onenord.nvim', { 'branch': 'main' } "THEME
     Plug 'mcchrish/zenbones.nvim'   "THEME
         Plug 'rktjmp/lush.nvim'
-    Plug 'ellisonleao/gruvbox.nvim', { 'branch': 'main' }   "THEME
+    Plug 'morhetz/gruvbox'          "THEME
     Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }   "THEME
     Plug 'shaunsingh/solarized.nvim'                    "THEME
     Plug 'overcache/NeoSolarized'                      "THEME
@@ -77,9 +77,13 @@ call plug#end()
 
 "set background=light
 "for ayu theme:
-let ayucolor="dark" "light or mirage or dark
-colorscheme ayu
+"let ayucolor="dark" "light or mirage or dark
+"colorscheme ayu
 "colorscheme gruvbox-material
+
+set background=dark
+colorscheme gruvbox
+let g:gruvbox_contrast_dark='hard'
 
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
