@@ -1,4 +1,7 @@
-import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/ayu_dark.toml"]
+#import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/ayu_dark.toml"]
+#import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/gruvbox_dark.toml"]
+import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/gruvbox_light.toml"]
+#import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/nordic.toml"]
 
 [font]
 size = 10

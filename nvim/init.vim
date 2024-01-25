@@ -53,6 +53,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'neoclide/coc-highlight'
     Plug 'neovim/nvim-lspconfig'
+    Plug 'stevearc/aerial.nvim'
     Plug 'simrat39/rust-tools.nvim'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'nvim-lua/plenary.nvim'
@@ -74,16 +75,16 @@ call plug#end()
 "colorscheme gruvbox-material
 "colorscheme everforest
 "colorscheme nordic
-
-"set background=light
+"colorscheme onenord
+set background=light
 "for ayu theme:
 "let ayucolor="dark" "light or mirage or dark
 "colorscheme ayu
 "colorscheme gruvbox-material
 
-set background=dark
+"set background=dark
 colorscheme gruvbox
-let g:gruvbox_contrast_dark='hard'
+"let g:gruvbox_contrast_dark='hard'
 
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
@@ -208,6 +209,8 @@ require("nvim-tree").setup({
 --require('feline').setup()
 require('gitsigns').setup()
 require'lspconfig'.pyright.setup{}
+require'aerial'.setup()
+
 EOF
 
 
