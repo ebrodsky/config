@@ -1,14 +1,22 @@
 #import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/ayu_dark.toml"]
-#import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/gruvbox_dark.toml"]
-import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/gruvbox_light.toml"]
+import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/gruvbox_dark.toml"]
+#import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/gruvbox_light.toml"]
 #import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/nordic.toml"]
-
+#import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/everforest_dark_hard.toml"]
+#import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/catppuccin_macchiato.toml"]
+#import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/solarized_light.toml"]
+#import = ["/home/eytan/.config/alacritty/random-themes/melange_dark.toml"]
+#import = ["/home/eytan/.config/alacritty/tempus-themes/tempus_autumn.toml"]
+#import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/everforest_dark.toml"]
 [font]
-size = 10
+size = 10.5
 
 [font.normal]
 family = "Iosevka"
 style = "monospace"
+
+[scrolling]
+history = 100000
 
 #[schemes.everforest_dark_hard.bright]
 #black = "#475258"

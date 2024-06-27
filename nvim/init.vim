@@ -13,7 +13,6 @@ set cindent
 set nocompatible
 set colorcolumn=100
 set smartcase
-"set background=dark
 set termguicolors
 set cursorline
 set laststatus=2
@@ -43,9 +42,18 @@ call plug#begin('~/.vim/plugged')
     Plug 'morhetz/gruvbox'          "THEME
     Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }   "THEME
     Plug 'shaunsingh/solarized.nvim'                    "THEME
+    Plug 'lifepillar/vim-solarized8'                    "THEME
     Plug 'overcache/NeoSolarized'                      "THEME
     Plug 'EdenEast/nightfox.nvim'                      "THEME
     Plug 'ayu-theme/ayu-vim'                            "THEME
+    Plug 'catppuccin/nvim', { 'as': 'catppuccin' }    "THEME
+    Plug 'sainnhe/edge'                             "THEME
+    Plug 'kartikp10/noctis.nvim'                     "THEME
+    Plug 'rakr/vim-one'                              "THEME
+    Plug 'savq/melange'                              "THEME
+    Plug 'luisiacc/gruvbox-baby'                     "THEME
+    Plug 'xero/miasma.nvim'                               "THEME
+    Plug 'rebelot/kanagawa.nvim'                          "THEME
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'NeogitOrg/neogit' 
@@ -69,29 +77,55 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-tree/nvim-tree.lua'
     Plug 'tpope/vim-fugitive'
     Plug 'lewis6991/gitsigns.nvim'
+    Plug 'rktjmp/lush.nvim'
+    Plug 'f-person/git-blame.nvim'
+    Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
 
-"let g:everforest_background = 'hard'
 "colorscheme gruvbox-material
 "colorscheme everforest
+"colorscheme terafox
+"colorscheme dawnfox
+
 "colorscheme nordic
-"colorscheme onenord
-set background=light
+    "colorscheme onenord
 "for ayu theme:
 "let ayucolor="dark" "light or mirage or dark
 "colorscheme ayu
 "colorscheme gruvbox-material
 
+"colorscheme catppuccin-macchiato
+
+"
+"set background"=light
+"colorscheme solarized8_high
+"
+
+
+"
+" I use this one a lot
+"let g:everforest_background = 'medium'
+"let g:everforest_better_performance = 1
+"set termguicolors
 "set background=dark
-colorscheme gruvbox
-"let g:gruvbox_contrast_dark='hard'
+"colorscheme everforest
+"
+"
+
+"colorscheme one
+"set background=light
+
+colorscheme retrobox
+"set background=light
+"colorscheme gruvbox
+"let g:gruvbox_contrast_light='hard'
 
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
 
 "let g:airline_theme='base16_nord'
-"let g:airline_theme='base16_gruvbox_dark_medium'
+let g:airline_theme='base16_gruvbox_dark_medium'
 
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
@@ -210,6 +244,7 @@ require("nvim-tree").setup({
 require('gitsigns').setup()
 require'lspconfig'.pyright.setup{}
 require'aerial'.setup()
+require("ibl").setup()
 
 EOF
 
