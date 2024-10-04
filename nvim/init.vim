@@ -1,4 +1,5 @@
 filetype on
+
 syntax enable
 set number
 "set relativenumber
@@ -37,8 +38,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'sainnhe/everforest'       "THEME
     Plug 'sainnhe/gruvbox-material' "THEME
     Plug 'rmehri01/onenord.nvim', { 'branch': 'main' } "THEME
-    Plug 'mcchrish/zenbones.nvim'   "THEME
-        Plug 'rktjmp/lush.nvim'
+    Plug 'rktjmp/lush.nvim'
+    Plug 'zenbones-theme/zenbones.nvim' "THEME
     Plug 'morhetz/gruvbox'          "THEME
     Plug 'AlexvZyl/nordic.nvim', { 'branch': 'main' }   "THEME
     Plug 'shaunsingh/solarized.nvim'                    "THEME
@@ -54,8 +55,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'luisiacc/gruvbox-baby'                     "THEME
     Plug 'xero/miasma.nvim'                               "THEME
     Plug 'rebelot/kanagawa.nvim'                          "THEME
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    Plug 'ramojus/mellifluous.nvim'                       "THEME
+    Plug 'rafi/awesome-vim-colorschemes'                  "THEME
+    Plug 'karoliskoncevicius/sacredforest-vim'           "THEME
+    Plug 'itchyny/lightline.vim'
     Plug 'NeogitOrg/neogit' 
         Plug 'sindrets/diffview.nvim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -71,7 +74,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'preservim/nerdtree'
     Plug 'github/copilot.vim'
     Plug 'nvim-treesitter/nvim-treesitter'
-    Plug 'neovim/nvim-lspconfig'
     Plug 'ray-x/go.nvim'
     Plug 'ray-x/guihua.lua'
     Plug 'nvim-tree/nvim-tree.lua'
@@ -79,20 +81,24 @@ call plug#begin('~/.vim/plugged')
     Plug 'lewis6991/gitsigns.nvim'
     Plug 'rktjmp/lush.nvim'
     Plug 'f-person/git-blame.nvim'
+    Plug 'klen/nvim-test'
     Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
 
 "colorscheme gruvbox-material
-"colorscheme everforest
 "colorscheme terafox
 "colorscheme dawnfox
+"colorscheme miasma
+
 
 "colorscheme nordic
     "colorscheme onenord
 "for ayu theme:
-"let ayucolor="dark" "light or mirage or dark
+"light or mirage or dark
+"let ayucolor = "mirage"
 "colorscheme ayu
-"colorscheme gruvbox-material
+"
+"colorscheme sacredforest
 
 "colorscheme catppuccin-macchiato
 
@@ -115,17 +121,68 @@ call plug#end()
 "colorscheme one
 "set background=light
 
-colorscheme retrobox
+"colorscheme retrobox
 "set background=light
 "colorscheme gruvbox
-"let g:gruvbox_contrast_light='hard'
+"let g:gruvbox_contrast_light='medium'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"Zenbones configurations: https://github.com/zenbones-theme/zenbones.nvim/blob/main/doc/zenbones.md
+let g:forestbones = #{ darken_comments: 45, italic_comments: v:false }
+
+" Disable italics for zenbones.nvim theme while preserving colors
+augroup NoItalicsZenbones
+  autocmd!
+  " Remove italics but keep the colors for the specific highlight groups
+  autocmd ColorScheme * highlight Comment gui=NONE cterm=NONE guifg=#6E7B85
+  autocmd ColorScheme * highlight Constant gui=NONE cterm=NONE guifg=#ADA28B
+  autocmd ColorScheme * highlight SpecialKey gui=NONE cterm=NONE guifg=#5D6D78
+  autocmd ColorScheme * highlight Boolean gui=NONE cterm=NONE guifg=#E7DCC4
+  autocmd ColorScheme * highlight String gui=NONE cterm=NONE guifg=#ADA28B
+  autocmd ColorScheme * highlight diffNewFile gui=NONE cterm=NONE guifg=#A9C181
+  autocmd ColorScheme * highlight diffOldFile gui=NONE cterm=NONE guifg=#E67C7F
+augroup END
+
+colorscheme forestbones
+
+"let g:lightline = #{ colorscheme: 'zenbones' } " or any other flavor
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
 
-"let g:airline_theme='base16_nord'
-let g:airline_theme='base16_gruvbox_dark_medium'
+" When using airline to avoid double mode show
+set noshowmode
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead',
+      \   'filename': 'LightlineFilename',
+      \ },
+  \ }
+
+function! LightlineFilename()
+  let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let path = expand('%:p')
+  if path[:len(root)-1] ==# root
+    return path[len(root)+1:]
+  endif
+  return expand('%')
+endfunction
+
+
+let g:unite_force_overwrite_statusline = 0
+let g:vimfiler_force_overwrite_statusline = 0
+let g:vimshell_force_overwrite_statusline = 0
 
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
@@ -245,6 +302,7 @@ require('gitsigns').setup()
 require'lspconfig'.pyright.setup{}
 require'aerial'.setup()
 require("ibl").setup()
+require("nvim-test").setup{}
 
 EOF
 
