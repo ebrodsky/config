@@ -227,8 +227,8 @@ for_window [window_role="(?i)GtkFileChooserDialog"] resize set 640 480 #to set s
 for_window [class=".*"] resize set 640 480 #to change size of floating windows
 
 # Gap Size
-gaps inner 5
-gaps outer 1
+gaps inner 0
+gaps outer 0
 
 # Color Settings: Everforest
 # class                 border  bground text    indicator child_border
