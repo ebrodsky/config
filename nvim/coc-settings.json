@@ -8,4 +8,7 @@
         "inactive-code"
     ],
     "python.pythonPath": "~/generic-venv/bin/python",
+    "python.linting.enabled": true,
+    "python.jediEnabled": true,
+    "python.jediPath": "/usr/lib/python3.12/site-packages/jedi"
 }

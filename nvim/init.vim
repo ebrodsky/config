@@ -85,7 +85,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
 
+"set background=dark
 "colorscheme gruvbox-material
+
 "colorscheme terafox
 "colorscheme dawnfox
 "colorscheme miasma
@@ -103,18 +105,18 @@ call plug#end()
 "colorscheme catppuccin-macchiato
 
 "
-"set background"=light
+"set background=light
 "colorscheme solarized8_high
 "
 
 
 "
 " I use this one a lot
-"let g:everforest_background = 'medium'
-"let g:everforest_better_performance = 1
-"set termguicolors
-"set background=dark
-"colorscheme everforest
+let g:everforest_background = 'medium'
+let g:everforest_better_performance = 1
+set termguicolors
+set background=dark
+colorscheme everforest
 "
 "
 
@@ -129,24 +131,25 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "Zenbones configurations: https://github.com/zenbones-theme/zenbones.nvim/blob/main/doc/zenbones.md
-let g:forestbones = #{ darken_comments: 45, italic_comments: v:false }
-
-" Disable italics for zenbones.nvim theme while preserving colors
-augroup NoItalicsZenbones
-  autocmd!
-  " Remove italics but keep the colors for the specific highlight groups
-  autocmd ColorScheme * highlight Comment gui=NONE cterm=NONE guifg=#6E7B85
-  autocmd ColorScheme * highlight Constant gui=NONE cterm=NONE guifg=#ADA28B
-  autocmd ColorScheme * highlight SpecialKey gui=NONE cterm=NONE guifg=#5D6D78
-  autocmd ColorScheme * highlight Boolean gui=NONE cterm=NONE guifg=#E7DCC4
-  autocmd ColorScheme * highlight String gui=NONE cterm=NONE guifg=#ADA28B
-  autocmd ColorScheme * highlight diffNewFile gui=NONE cterm=NONE guifg=#A9C181
-  autocmd ColorScheme * highlight diffOldFile gui=NONE cterm=NONE guifg=#E67C7F
-augroup END
-
-colorscheme forestbones
-
-"let g:lightline = #{ colorscheme: 'zenbones' } " or any other flavor
+"let g:forestbones = #{ darken_comments: 45, italic_comments: v:false }
+"
+"" Disable italics for zenbones.nvim theme while preserving colors
+"augroup NoItalicsZenbones
+"  autocmd!
+"  " Remove italics but keep the colors for the specific highlight groups
+"  autocmd ColorScheme * highlight Comment gui=NONE cterm=NONE guifg=#6E7B85
+"  autocmd ColorScheme * highlight Constant gui=NONE cterm=NONE guifg=#ADA28B
+"  autocmd ColorScheme * highlight SpecialKey gui=NONE cterm=NONE guifg=#5D6D78
+"  autocmd ColorScheme * highlight Boolean gui=NONE cterm=NONE guifg=#E7DCC4
+"  autocmd ColorScheme * highlight String gui=NONE cterm=NONE guifg=#ADA28B
+"  autocmd ColorScheme * highlight diffNewFile gui=NONE cterm=NONE guifg=#A9C181
+"  autocmd ColorScheme * highlight diffOldFile gui=NONE cterm=NONE guifg=#E67C7F
+"augroup END
+"
+"colorscheme forestbones
+"
+"let g:lightline = #{ colorscheme: 'zenbones' } " or any other flavor.
+"Optional.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -159,7 +162,7 @@ let g:rustfmt_fail_silently = 0
 set noshowmode
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'everforest',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
