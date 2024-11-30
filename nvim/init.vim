@@ -33,6 +33,8 @@ let g:netrw_winsize = 25
 
 set backspace=indent,eol,start
 
+let g:mapleader = ","
+
 call plug#begin('~/.vim/plugged')
     Plug 'arcticicestudio/nord-vim' "THEME
     Plug 'sainnhe/everforest'       "THEME
@@ -58,6 +60,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'ramojus/mellifluous.nvim'                       "THEME
     Plug 'rafi/awesome-vim-colorschemes'                  "THEME
     Plug 'karoliskoncevicius/sacredforest-vim'           "THEME
+    Plug 'wincent/base16-nvim'                           "THEME
     Plug 'itchyny/lightline.vim'
     Plug 'NeogitOrg/neogit' 
         Plug 'sindrets/diffview.nvim'
@@ -71,7 +74,13 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-telescope/telescope.nvim' 
     Plug 'nvim-telescope/telescope-file-browser.nvim'
     Plug 'nvim-tree/nvim-web-devicons'
-    Plug 'preservim/nerdtree'
+    Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+            \ Plug 'ryanoasis/vim-devicons' |
+            \ Plug 'tiagofumo/vim-nerdtree-syntax-highlight' |
+            \ Plug 'PhilRunninger/nerdtree-visual-selection' |
+            \ Plug 'PhilRunninger/nerdtree-buffer-ops'
+
     Plug 'github/copilot.vim'
     Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'ray-x/go.nvim'
@@ -112,11 +121,11 @@ call plug#end()
 
 "
 " I use this one a lot
-let g:everforest_background = 'medium'
-let g:everforest_better_performance = 1
-set termguicolors
-set background=dark
-colorscheme everforest
+"let g:everforest_background = 'medium'
+"let g:everforest_better_performance = 1
+"set termguicolors
+"set background=dark
+"colorscheme everforest
 "
 "
 
@@ -128,9 +137,10 @@ colorscheme everforest
 "colorscheme gruvbox
 "let g:gruvbox_contrast_light='medium'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""
-"Zenbones configurations: https://github.com/zenbones-theme/zenbones.nvim/blob/main/doc/zenbones.md
+"""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
+""Zenbones configurations: https://github.com/zenbones-theme/zenbones.nvim/blob/main/doc/zenbones.md
+"
 "let g:forestbones = #{ darken_comments: 45, italic_comments: v:false }
 "
 "" Disable italics for zenbones.nvim theme while preserving colors
@@ -148,11 +158,18 @@ colorscheme everforest
 "
 "colorscheme forestbones
 "
-"let g:lightline = #{ colorscheme: 'zenbones' } " or any other flavor.
-"Optional.
+"let g:lightline = #{ colorscheme: 'zenbones' } " or any other flavor. Optional.
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""
+"https://github.com/wincent/base16-nvim
+"colorscheme base16-everforest-dark-hard
+
+set background=dark "important to set background for code actions to have correct colors
+colorscheme base16-everforest
+"colorscheme base16-gruvbox-material-dark-soft
+
 
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
@@ -186,6 +203,13 @@ endfunction
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
+
+"NERDTree settings
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTreeToggle<CR> 
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
+
 
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
