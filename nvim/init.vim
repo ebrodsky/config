@@ -1,8 +1,8 @@
 filetype on
 
 syntax enable
-set number
-"set relativenumber
+"set number
+set relativenumber
 set tabstop=4
 set softtabstop=4
 set hlsearch
@@ -121,11 +121,11 @@ call plug#end()
 
 "
 " I use this one a lot
-"let g:everforest_background = 'medium'
-"let g:everforest_better_performance = 1
-"set termguicolors
-"set background=dark
-"colorscheme everforest
+let g:everforest_background = 'medium'
+let g:everforest_better_performance = 1
+set termguicolors
+set background=dark
+colorscheme everforest
 "
 "
 
@@ -166,10 +166,15 @@ call plug#end()
 "https://github.com/wincent/base16-nvim
 "colorscheme base16-everforest-dark-hard
 
-set background=dark "important to set background for code actions to have correct colors
-colorscheme base16-everforest
+"set background=dark "important to set background for code actions to have correct colors
+"colorscheme base16-everforest
 "colorscheme base16-gruvbox-material-dark-soft
-
+"colorscheme base16-gruvbox-dark-hard
+"colorscheme base16-solarized-light
+"colorscheme base16-precious-light-warm
+"colorscheme base16-embers-light
+"colorscheme base16-kanagawa
+"colorscheme base16-solarized-dark
 
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
