@@ -132,14 +132,19 @@ export PATH="$HOME/gems/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 alias tmux="TERM=screen-256color-bce tmux"
 
+export CURRENT_THEME_PATH="$HOME/.cache/current_theme"
+
 
 function nvim_wrapper() {
     NVIM_BINARY="/usr/bin/nvim"
     NVIM_PIPES="/tmp/nvim-pipes"
 
+    CURRENT_THEME=$(cat $CURRENT_THEME_PATH)
+
     PIPE_HASH=$(echo "$(pwd)_${RANDOM}" | base64)
     [[ -d $NVIM_PIPES ]] || mkdir $NVIM_PIPES
-    $NVIM_BINARY --listen $NVIM_PIPES/$PIPE_HASH.pipe "$@"
+    $NVIM_BINARY -c "Theme $CURRENT_THEME" --listen $NVIM_PIPES/$PIPE_HASH.pipe "$@"
+
 }
 
 function switch_theme() {
@@ -155,6 +160,8 @@ function switch_theme() {
         [[ -d $NVIM_PIPES ]] || mkdir $NVIM_PIPES
         ls $NVIM_PIPES | xargs -I {} sh -c "nvim --server $NVIM_PIPES/{} --remote-send ':Theme $1<CR>'" 
         echo "Nvim theme switched to $1"
+
+        echo $1 > $CURRENT_THEME_PATH
     else
         echo "Usage: switch_theme [light|dark]"
     fi
