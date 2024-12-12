@@ -1,11 +1,16 @@
 configuration {
-modi: "window,drun,ssh,filebrowser,emoji,calc,p:rofi-power-menu";
-  terminal: "alacritty";
-  drun-match-fields: "name";
-  sidebar-mode: true;
-  font: "Iosevka 20";
+    modi: "window,drun,ssh,filebrowser,emoji,calc,p:rofi-power-menu";
+    terminal: "alacritty";
+    drun-match-fields: "name";
+    sidebar-mode: true;
+    font: "Iosevka 20";
 }
 //@theme "/usr/share/rofi/themes/squared-everforest.rasi"
 //@theme "/usr/share/rofi/themes/squared-everforest.rasi"
 //@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
-@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
+//@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
+//@theme "/usr/share/rofi/themes/squared-everforest.rasi"
+//@theme "/usr/share/rofi/themes/Adapta-Nokto.rasi"
+//@theme "/usr/share/rofi/themes/paper-float.rasi"
+//@theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
+@theme "/usr/share/rofi/themes/gruvbox-light.rasi"
