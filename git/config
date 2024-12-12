@@ -1,0 +1,46 @@
+#[url "ssh://git@github.com/"]
+#	insteadOf = https://github.com/
+[user]
+	email = eytanbrodsky@gmail.com
+	name = Eytan Brodsky
+
+[merge]
+    tool = nvim
+[mergetool "nvim"]
+    cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+[mergetool]
+    prompt = false
+[diff]
+    colormoved = "zebra"
+    colormovedws = "allow-indentation-change"
+[push]
+    default = simple
+    followTags = true
+[core]
+    fileMode = false
+    excludesfile = ~/.gitexcludes
+    editor = nvim
+[color]
+    ui = true
+[format]
+    pretty = oneline
+[alias]
+	co = checkout
+	s = status
+	d = diff
+	cm = commit -m
+	ca = commit -am
+	pl = pull
+	pu = push
+	a = add
+	l = log --oneline -n20
+	aa = commit --amend
+	sb = show-branch
+	subdate = !git submodule update --init --recursive
+	mote = !git fetch --all && git show-branch $(git rev-parse --abbrev-ref HEAD) origin/$(git rev-parse --abbrev-ref HEAD)
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+
+[init]
+    defaultBranch = main
+
