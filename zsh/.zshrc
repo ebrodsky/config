@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.config/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -12,6 +12,7 @@ export ZSH="$HOME/.oh-my-zsh"
 #ZSH_THEME="pygmalion"
 #ZSH_THEME="simple"
 ZSH_THEME="gallois"
+#ZSH_THEME="muse"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -94,6 +95,14 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+export EDITOR='nvim'
+source <(fzf --zsh)
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -109,28 +118,12 @@ alias poweropt='sudo ~/powertop_cmds.sh' #Fix bad parts in powertop output
 alias psme='ps -ef | grep $USER --color=always '
 alias vpn='sudo openconnect sds.oregonstate.edu'
 alias leave="sudo pkill -u $USER"
-alias pipes="~/pipes.sh/pipes.sh"
-alias vim='nvim'
+alias vim='nvim_wrapper'
+alias nvim='nvim_wrapper'
 alias vf="fzf --print0 | xargs -0 -o vim"
 
 function ffind {
     find / -name $1 2>/dev/null
-}
-
-function intelify {
-    export http_proxy=http://proxy-chain.intel.com:911                                              
-    export https_proxy=http://proxy-chain.intel.com:911                                             
-    export ftp_proxy=http://proxy-chain.intel.com:911                                               
-    export socks_proxy=http://proxy-us.intel.com:1080                                               
-    export no_proxy=intel.com,.intel.com,localhost,127.0.0.1,10.0.0.0/8,192.168.0.0/16,172.16.0.0/12
-}
-
-function unintelify {
-    unset http_proxy
-    unset https_proxy
-    unset ftp_proxy
-    unset socks_proxy
-    unset no_proxy
 }
 
 # Install Ruby Gems to ~/gems
@@ -140,4 +133,36 @@ export PATH="$HOME/.local/bin:$PATH"
 alias tmux="TERM=screen-256color-bce tmux"
 
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+function nvim_wrapper() {
+    NVIM_BINARY="/usr/bin/nvim"
+    NVIM_PIPES="/tmp/nvim-pipes"
+
+    PIPE_HASH=$(echo "$(pwd)_${RANDOM}" | base64)
+    [[ -d $NVIM_PIPES ]] || mkdir $NVIM_PIPES
+    $NVIM_BINARY --listen $NVIM_PIPES/$PIPE_HASH.pipe "$@"
+}
+
+function switch_theme() {
+    #continue only if it's either light or dark
+    if [[ "$1" = "light" || "$1" = "dark" ]]; then
+        # Switching alacritty theme. the alacritty dir must contain alacritty_light and alacritty_dark
+        cp ~/.config/alacritty/alacritty_$1.toml ~/.config/alacritty/alacritty.toml
+        echo "Alacritty theme switched to $1"
+
+        # Switching nvim theme
+        NVIM_PIPES="/tmp/nvim-pipes"
+        # Update nvim theme in all listening nvim servers
+        [[ -d $NVIM_PIPES ]] || mkdir $NVIM_PIPES
+        ls $NVIM_PIPES | xargs -I {} sh -c "nvim --server $NVIM_PIPES/{} --remote-send ':Theme $1<CR>'" 
+        echo "Nvim theme switched to $1"
+    else
+        echo "Usage: switch_theme [light|dark]"
+    fi
+
+}
+
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
