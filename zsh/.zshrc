@@ -121,6 +121,7 @@ alias leave="sudo pkill -u $USER"
 alias vim='nvim_wrapper'
 alias nvim='nvim_wrapper'
 alias vf="fzf --print0 | xargs -0 -o vim"
+alias lz="lazygit"
 
 function ffind {
     find / -name $1 2>/dev/null
