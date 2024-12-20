@@ -278,6 +278,9 @@ inoremap <silent><expr> <TAB>
 inoremap <silent><expr> <S-TAB> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<TAB>"
 "Shift + K to show documentation for a function
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+"Ctrl + K to show documentation for a function in insert mode
+inoremap <silent> <C-k> <Esc>:call <SID>show_documentation()<CR>
+
 
 "Allow scrolling through coc pop-ups with control+arrow keys
 nnoremap <nowait><expr> <C-Down> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
@@ -325,6 +328,9 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+
+inoremap <C-e> <Esc>A
 
 lua << EOF
 local neogit = require('neogit')
