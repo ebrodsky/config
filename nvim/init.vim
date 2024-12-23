@@ -198,7 +198,7 @@ let g:rustfmt_fail_silently = 0
 set noshowmode
 
 let g:lightline = {
-      \ 'colorscheme': 'everforest',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -229,7 +229,19 @@ function! SwitchTheme(mode) abort
     if a:mode ==# 'light'
         set background=light
         colorscheme gruvbox8
-        let g:lightline = #{ colorscheme: 'gruvbox' } " or any other flavor. Optional.
+        "let g:gruvbox_contrast_light='medium'
+        "let g:lightline = #{ colorscheme: 'gruvbox' } " or any other flavor. Optional.
+        let g:lightline = {
+              \ 'colorscheme': 'gruvbox',
+              \ 'active': {
+              \   'left': [ [ 'mode', 'paste' ],
+              \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+              \ },
+              \ 'component_function': {
+              \   'gitbranch': 'FugitiveHead',
+              \   'filename': 'LightlineFilename',
+              \ },
+          \ }
         call LightlineReload()
     elseif a:mode ==# 'dark'
         set background=dark
@@ -250,7 +262,18 @@ function! SwitchTheme(mode) abort
         set background=dark
         colorscheme forestbones
         "
-        let g:lightline = #{ colorscheme: 'everforest' } " or any other flavor. Optional.
+        "let g:lightline = #{ colorscheme: 'everforest' } " or any other flavor. Optional.
+        let g:lightline = {
+              \ 'colorscheme': 'gruvbox',
+              \ 'active': {
+              \   'left': [ [ 'mode', 'paste' ],
+              \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+              \ },
+              \ 'component_function': {
+              \   'gitbranch': 'FugitiveHead',
+              \   'filename': 'LightlineFilename',
+              \ },
+          \ }
         call LightlineReload()
     else
         echoerr 'Invalid mode! Use "light" or "dark".'
