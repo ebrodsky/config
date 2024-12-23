@@ -128,7 +128,6 @@ call plug#end()
 "colorscheme solarized8_high
 "
 
-
 "
 " I use this one a lot
 "let g:everforest_background = 'medium'
@@ -147,33 +146,6 @@ call plug#end()
 "colorscheme gruvbox
 "let g:gruvbox_contrast_light='medium'
 
-"""""""""""""""""""""""""""""""""""""""""""""""""
-"""""CURRENT CHOICE OF DARK THEME FOR WORKING IN THE EVENING
-"""""""""""""""""""""""""""""""""""""""""""""""""
-"Zenbones configurations: https://github.com/zenbones-theme/zenbones.nvim/blob/main/doc/zenbones.md
-
-let g:forestbones = #{ darken_comments: 45, italic_comments: v:false }
-
-" Disable italics for zenbones.nvim theme while preserving colors
-augroup NoItalicsZenbones
-  autocmd!
-  " Remove italics but keep the colors for the specific highlight groups
-  autocmd ColorScheme * highlight Comment gui=NONE cterm=NONE guifg=#6E7B85
-  autocmd ColorScheme * highlight Constant gui=NONE cterm=NONE guifg=#ADA28B
-  autocmd ColorScheme * highlight SpecialKey gui=NONE cterm=NONE guifg=#5D6D78
-  autocmd ColorScheme * highlight Boolean gui=NONE cterm=NONE guifg=#E7DCC4
-  autocmd ColorScheme * highlight String gui=NONE cterm=NONE guifg=#ADA28B
-  autocmd ColorScheme * highlight diffNewFile gui=NONE cterm=NONE guifg=#A9C181
-  autocmd ColorScheme * highlight diffOldFile gui=NONE cterm=NONE guifg=#E67C7F
-augroup END
-
-set background=dark
-colorscheme forestbones
-"
-let g:lightline = #{ colorscheme: 'zenbones' } " or any other flavor. Optional.
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""
 
 "https://github.com/wincent/base16-nvim
 "colorscheme base16-everforest-dark-hard
@@ -197,18 +169,6 @@ let g:rustfmt_fail_silently = 0
 " When using airline to avoid double mode show
 set noshowmode
 
-let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead',
-      \   'filename': 'LightlineFilename',
-      \ },
-  \ }
-
 function! LightlineFilename()
   let root = fnamemodify(get(b:, 'git_dir'), ':h')
   let path = expand('%:p')
@@ -224,60 +184,72 @@ function! LightlineReload()
   call lightline#update()
 endfunction
 
-" Function to switch between themes
-function! SwitchTheme(mode) abort
-    if a:mode ==# 'light'
-        set background=light
-        colorscheme gruvbox8
-        "let g:gruvbox_contrast_light='medium'
-        "let g:lightline = #{ colorscheme: 'gruvbox' } " or any other flavor. Optional.
-        let g:lightline = {
-              \ 'colorscheme': 'gruvbox',
-              \ 'active': {
-              \   'left': [ [ 'mode', 'paste' ],
-              \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-              \ },
-              \ 'component_function': {
-              \   'gitbranch': 'FugitiveHead',
-              \   'filename': 'LightlineFilename',
-              \ },
-          \ }
-        call LightlineReload()
-    elseif a:mode ==# 'dark'
-        set background=dark
-        let g:forestbones = #{ darken_comments: 45, italic_comments: v:false }
-        " Disable italics for zenbones.nvim theme while preserving colors
-        augroup NoItalicsZenbones
-          autocmd!
-          " Remove italics but keep the colors for the specific highlight groups
-          autocmd ColorScheme * highlight Comment gui=NONE cterm=NONE guifg=#6E7B85
-          autocmd ColorScheme * highlight Constant gui=NONE cterm=NONE guifg=#ADA28B
-          autocmd ColorScheme * highlight SpecialKey gui=NONE cterm=NONE guifg=#5D6D78
-          autocmd ColorScheme * highlight Boolean gui=NONE cterm=NONE guifg=#E7DCC4
-          autocmd ColorScheme * highlight String gui=NONE cterm=NONE guifg=#ADA28B
-          autocmd ColorScheme * highlight diffNewFile gui=NONE cterm=NONE guifg=#A9C181
-          autocmd ColorScheme * highlight diffOldFile gui=NONE cterm=NONE guifg=#E67C7F
-        augroup END
 
-        set background=dark
-        colorscheme forestbones
-        "
-        "let g:lightline = #{ colorscheme: 'everforest' } " or any other flavor. Optional.
-        let g:lightline = {
-              \ 'colorscheme': 'gruvbox',
-              \ 'active': {
-              \   'left': [ [ 'mode', 'paste' ],
-              \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-              \ },
-              \ 'component_function': {
-              \   'gitbranch': 'FugitiveHead',
-              \   'filename': 'LightlineFilename',
-              \ },
-          \ }
-        call LightlineReload()
-    else
-        echoerr 'Invalid mode! Use "light" or "dark".'
-    endif
+" Helper function to configure the light theme
+function! SetLightTheme() abort
+  set background=light
+  colorscheme gruvbox8
+  " Optional lightline configuration
+  let g:lightline = {
+        \ 'colorscheme': 'gruvbox',
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ],
+        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+        \ },
+        \ 'component_function': {
+        \   'gitbranch': 'FugitiveHead',
+        \   'filename': 'LightlineFilename',
+        \ },
+    \ }
+  call LightlineReload()
+endfunction
+
+" Helper function to configure the dark theme
+function! SetDarkTheme() abort
+  set background=dark
+  "let g:forestbones = #{ darken_comments: 45, italic_comments: v:false }
+
+  "" Disable italics for zenbones.nvim theme while preserving colors
+  "augroup NoItalicsZenbones
+  "  autocmd!
+  "  autocmd ColorScheme * highlight Comment gui=NONE cterm=NONE guifg=#6E7B85
+  "  autocmd ColorScheme * highlight Constant gui=NONE cterm=NONE guifg=#ADA28B
+  "  autocmd ColorScheme * highlight SpecialKey gui=NONE cterm=NONE guifg=#5D6D78
+  "  autocmd ColorScheme * highlight Boolean gui=NONE cterm=NONE guifg=#E7DCC4
+  "  autocmd ColorScheme * highlight String gui=NONE cterm=NONE guifg=#ADA28B
+  "  autocmd ColorScheme * highlight diffNewFile gui=NONE cterm=NONE guifg=#A9C181
+  "  autocmd ColorScheme * highlight diffOldFile gui=NONE cterm=NONE guifg=#E67C7F
+  "augroup END
+
+  " Set dark background and activate the forestbones theme
+  set background=dark
+  "colorscheme forestbones
+  colorscheme everforest
+
+  " Optional lightline configuration (using gruvbox here for consistency)
+  let g:lightline = {
+        \ 'colorscheme': 'everforest',
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ],
+        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+        \ },
+        \ 'component_function': {
+        \   'gitbranch': 'FugitiveHead',
+        \   'filename': 'LightlineFilename',
+        \ },
+    \ }
+  call LightlineReload()
+endfunction
+
+" Main function to switch between themes
+function! SwitchTheme(mode) abort
+  if a:mode ==# 'light'
+    call SetLightTheme()
+  elseif a:mode ==# 'dark'
+    call SetDarkTheme()
+  else
+    echoerr 'Invalid mode! Use "light" or "dark".'
+  endif
 endfunction
 
 command! -nargs=1 Theme call SwitchTheme(<f-args>)
