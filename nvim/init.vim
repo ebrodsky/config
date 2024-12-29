@@ -327,6 +327,18 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 inoremap <C-e> <Esc>A
 
+
+"Better tab manipulation
+nnoremap ta :tabnew<CR>
+nnoremap th :tabfirst<CR>
+nnoremap tk :tabnext<CR>
+nnoremap tj :tabprev<CR>
+nnoremap tl :tablast<CR>
+nnoremap tt :tabedit<Space>
+nnoremap tn :tabnext<Space>
+nnoremap tm :tabm<Space>
+nnoremap td :tabclose<CR>
+
 lua << EOF
 local neogit = require('neogit')
 neogit.setup {}
