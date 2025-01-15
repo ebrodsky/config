@@ -1,4 +1,4 @@
-filetype on
+filetyp on
 
 syntax enable
 "set number
@@ -16,6 +16,7 @@ set colorcolumn=100
 set smartcase
 set termguicolors
 set cursorline
+"set cursorlineopt=number
 set laststatus=2
 set showcmd
 set wildmenu
@@ -94,6 +95,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'f-person/git-blame.nvim'
     Plug 'klen/nvim-test'
     Plug 'lukas-reineke/indent-blankline.nvim'
+    Plug 'mhinz/vim-startify'
 call plug#end()
 
 "set background=dark
@@ -191,7 +193,7 @@ function! SetLightTheme() abort
   colorscheme gruvbox8
   " Optional lightline configuration
   let g:lightline = {
-        \ 'colorscheme': 'gruvbox',
+        \ 'colorscheme': 'ayu_light',
         \ 'active': {
         \   'left': [ [ 'mode', 'paste' ],
         \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -206,7 +208,6 @@ endfunction
 
 " Helper function to configure the dark theme
 function! SetDarkTheme() abort
-  set background=dark
   "let g:forestbones = #{ darken_comments: 45, italic_comments: v:false }
 
   "" Disable italics for zenbones.nvim theme while preserving colors
@@ -356,6 +357,28 @@ require("telescope").setup {
       hijack_netrw = true,
     },
   },
+  pickers = {
+    find_files = {
+      hidden = true,
+
+    }, 
+
+  vimgrep_arguments = {
+    'rg',
+    '--color=never',
+    '--no-heading',
+    '--with-filename',
+    '--line-number',
+    '--column',
+    '--smart-case',
+    '--hidden',
+    },
+
+  file_ignore_patterns = {
+    ".git/",
+    "node_modules/",
+    },
+  }
 }
 -- To get telescope-file-browser loaded and working with telescope,
 -- you need to call load_extension, somewhere after setup function:
