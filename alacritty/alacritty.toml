@@ -1,5 +1,5 @@
 [font]
-size = 14
+size = 13
 
 [font.normal]
 family = "Iosevka"
@@ -9,4 +9,4 @@ style = "monospace"
 history = 100000
 
 [general]
-import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/everforest_dark.toml"]
+import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/gruvbox_light.toml"]
