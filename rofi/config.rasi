@@ -3,7 +3,7 @@ configuration {
     terminal: "alacritty";
     drun-match-fields: "name";
     sidebar-mode: true;
-    font: "Iosevka 20";
+    font: "Iosevka 12";
 }
 //@theme "/usr/share/rofi/themes/squared-everforest.rasi"
 //@theme "/usr/share/rofi/themes/squared-everforest.rasi"
