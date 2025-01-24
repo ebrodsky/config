@@ -1,17 +1,17 @@
 * {
-	font-size: 20px;
-	font-family: monospace;
+	font-size: 16px;
+	font-family: iosevka, monospace;
 }
 
 window#waybar {
-	background: #292b2e;
-	color: #fdf6e3;
+	background: #292f2b;
+	color: #afdcc6;
 }
 
 #custom-clock-separator {
   /* Match your background or adjust as needed: */
-  background: #1a1a1a;
-  color: #fdf6e3;
+  background: #2a4e51;
+  color: #afdcc6;
 
   /* If you want it smaller than the default 20px: */
   font-size: 16px;
@@ -22,8 +22,8 @@ window#waybar {
 
 #custom-theme-toggle {
   /* Match your background or adjust as needed: */
-  background: #1a1a1a;
-  color: #fdf6e3;
+  background: #2a4e51;
+  color: #afdcc6;
 
   /* If you want it smaller than the default 20px: */
   font-size: 16px;
@@ -32,15 +32,23 @@ window#waybar {
   padding: 0 8px;
 }
 
+#custom-sunset {
+    background: #2a4e51;
+    color: #afdcc6;
+}
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-	color: #1a1a1a;
+	color: #2a4e51;
 }
 #custom-right-arrow-light,
 #custom-left-arrow-light {
 	color: #292b2e;
-	background: #1a1a1a;
+	background: #2a4e51;
+}
+#custom-space-box {
+    background: #2a4e51;
+    color: #2a4e51;
 }
 
 #workspaces,
@@ -55,7 +63,7 @@ window#waybar {
 #battery,
 #disk,
 #tray {
-	background: #1a1a1a;
+	background: #2a4e51;
 }
 
 #workspaces button {
@@ -70,6 +78,12 @@ window#waybar {
   color: #292f2b;
 }
 
+#workspaces button.active {
+  background-color: #7da67a;
+  /*color: #bbbbbb;*/
+  color: #fdf6e3;
+}
+
 #workspaces button:hover {
 	box-shadow: inherit;
 	text-shadow: inherit;
@@ -80,19 +94,19 @@ window#waybar {
 	padding: 0 3px;
 }
 #pulseaudio {
-	color: #268bd2;
+	color: #fbc46f;
 }
 #memory {
-	color: #2aa198;
+	color: #fbc46f;
 }
 #cpu {
-	color: #6c71c4;
+	color: #d96f68;
 }
 #battery {
-	color: #859900;
+	color: #afdcc6;
 }
 #disk {
-	color: #b58900;
+	color: #fbc46f;
 }
 
 #clock,
@@ -101,5 +115,5 @@ window#waybar {
 #cpu,
 #battery,
 #disk {
-	padding: 0 10px;
+	padding: 0 5px;
 }

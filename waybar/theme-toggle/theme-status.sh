@@ -8,8 +8,8 @@ CURRENT_THEME=$(cat "$CURRENT_THEME_PATH")
 # Alternatively, you can use something else like Unicode emojis: "🌞" or "🌑"
 if [ "$CURRENT_THEME" = "light" ]; then
     #echo "🌑"
-    echo "☀"
+    echo "🔆"
 else
     #echo "🌔"
-    echo "☾"
+    echo "🌕"
 fi

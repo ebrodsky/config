@@ -5,9 +5,8 @@
 	"position": "top",
 
 	"modules-left": [
-        "hyprland/workspaces.visible",
-		"custom/right-arrow-dark",
 		"hyprland/workspaces",
+        "custom/space-box",
 		"custom/right-arrow-dark",
 	],
 	"modules-center": [
@@ -26,6 +25,9 @@
 	"modules-right": [
 		"custom/left-arrow-dark",
 		"custom/theme-toggle",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"custom/sunset",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"pulseaudio",
@@ -67,6 +69,10 @@
 		"format": "",
 		"tooltip": false
 	},
+    "custom/space-box": {
+        "format": "█",
+        "tooltip": false
+    },
 
 	"hyprland/workspaces": {
 		"disable-scroll": false,
@@ -103,20 +109,35 @@
     },
 
     "custom/theme-toggle": {
-        "interval": 0.5,
+        "interval": "once",
+        "format": "theme:{}",
         "exec": "~/.config/waybar/theme-toggle/theme-status.sh",
         "on-click": "~/.config/waybar/theme-toggle/theme-toggle.sh"
     },
+
+   "custom/sunset": {
+        "interval": "once",
+        "tooltip": true,
+        "return-type": "json",
+        "format" : "{icon}",
+        "format-icons": {
+            "on": "temp:🔆" ,
+            "off": "temp:🌕"
+        },
+        "exec": "~/.config/waybar/sunset/sunset.sh",
+        "on-click": "exec ~/.config/waybar/sunset/sunset.sh toggle; pkill -RTMIN+6 waybar",
+        "exec-if": "~/.config/waybar/sunset/sunset.sh check",
+        "signal": 6
+    }, 
 
 	"pulseaudio": {
 		"format": "{icon} {volume:2}%",
 		"format-bluetooth": "{icon}  {volume}%",
 		"format-muted": "MUTE",
 		"format-icons": {
-			"headphones": "",
+			"headphones": "🎧",
 			"default": [
-				"",
-				""
+                "vol"
 			]
 		},
 		"scroll-step": 5,
@@ -126,24 +147,24 @@
 
     "network": {
         "format": "{ifname}",
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname} ",
+        "format-wifi": "{essid} ({signalStrength}%) ᯤ",
+        "yformat-ethernet": "{ifname} 🖧",
         "format-disconnected": "", //An empty format will hide the module.
-        "format-disconnected": "",
+        "format-disconnected": "🌐",
         "tooltip-format": "{ifname}",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ᯤ",
+        "tooltip-format-ethernet": "{ifname} 🖧",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50
     },
 
 	"memory": {
 		"interval": 5,
-		"format": "Mem {}%"
+		"format": "mem {}%"
 	},
 	"cpu": {
 		"interval": 5,
-		"format": "CPU {usage:2}%"
+		"format": "cpu {usage:2}%"
 	},
 	"battery": {
 		"states": {
@@ -155,17 +176,13 @@
         "format-charging": "++ {capacity}% {time} {power}",
         "format-discharging": "-- {capacity}% {time} {power}",
 		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			""
+		"bat"
 		]
 
 	},
 	"disk": {
 		"interval": 5,
-		"format": "Disk {percentage_used:2}%",
+		"format": "disk {percentage_used:2}%",
 		"path": "/"
 	},
 	"tray": {
