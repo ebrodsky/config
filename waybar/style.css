@@ -62,6 +62,7 @@ window#waybar {
 #cpu,
 #battery,
 #disk,
+#keyboard-state label.capslock.locked,
 #tray {
 	background: #2a4e51;
 }
@@ -108,12 +109,33 @@ window#waybar {
 #disk {
 	color: #fbc46f;
 }
+#keyboard-state label.capslock.locked{
+    color: #afdcc6;
+}
 
 #clock,
 #pulseaudio,
 #memory,
 #cpu,
 #battery,
+#keyboard-state.capslock.locked,
 #disk {
 	padding: 0 5px;
 }
+
+#keyboard-state label.capslock {
+    color: #f2766b;
+    background: #2a4e51;
+    padding: 0 0px;
+    margin: 0 0px;
+    font-size: 0px;
+}
+#keyboard-state label.capslock.locked {
+    color: #f2766b;
+    background: #2a4e51;
+	padding: 0 5px;
+    font-size: 16px;
+}
+
+
+
