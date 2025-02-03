@@ -96,6 +96,16 @@ call plug#begin('~/.vim/plugged')
     Plug 'klen/nvim-test'
     Plug 'lukas-reineke/indent-blankline.nvim'
     Plug 'mhinz/vim-startify'
+    " Deps for avante
+    Plug 'stevearc/dressing.nvim'
+    Plug 'MunifTanjim/nui.nvim'
+    " Optional for avante
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'HakonHarnes/img-clip.nvim'
+
+    Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
+
+
 call plug#end()
 
 "set background=dark
@@ -342,6 +352,7 @@ nnoremap td :tabclose<CR>
 "nnoremap <expr> tt (v:count1 < 1 ? 1 : v:count1) . 'gt'
 
 nnoremap <nowait> tt gt
+autocmd! User avante.nvim
 
 lua << EOF
 local neogit = require('neogit')
@@ -430,6 +441,7 @@ require'aerial'.setup()
 require("ibl").setup()
 require("nvim-test").setup{}
 
+require('avante_lib').load()
+require('avante').setup()
+vim.opt.laststatus = 3
 EOF
-
-

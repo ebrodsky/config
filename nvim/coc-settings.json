@@ -11,4 +11,12 @@
     "python.linting.enabled": true,
     "python.jediEnabled": true,
     "python.jediPath": "/usr/lib/python3.12/site-packages/jedi"
+      "python.linting.pylintEnabled": false,
+      "python.linting.pep8Enabled": false,
+      "python.linting.enabled": true,
+      "python.linting.banditEnabled": false,
+      "python.linting.flake8Enabled": true,
+     "python.linting.mypyEnabled": false,
+     "python.linting.pylamaEnabled": false
+}
 }
