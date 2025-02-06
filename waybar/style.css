@@ -37,6 +37,11 @@ window#waybar {
     color: #afdcc6;
 }
 
+#custom-gpuinfo {
+    background: #2a4e51;
+    color: #7da67a;
+}
+
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
 	color: #2a4e51;
@@ -56,6 +61,7 @@ window#waybar {
 #clock.2,
 #clock.3,
 #clock.4,
+#clock.5,
 #pulseaudio,
 #network,
 #memory,

@@ -3,6 +3,7 @@
 {
 	"layer": "top",
 	"position": "top",
+    "output": ["DP-2"],
 
 	"modules-left": [
 		"hyprland/workspaces",
@@ -15,6 +16,8 @@
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"clock#2",
+        "custom/clock-separator",
+        "clock#5",
         "custom/clock-separator",
         "clock#4",
 		"custom/right-arrow-dark",
@@ -37,6 +40,9 @@
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"network",
+		"custom/left-arrow-light",
+        "custom/left-arrow-dark",
+		"custom/gpuinfo",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"memory",
@@ -98,15 +104,18 @@
 		"format": "{:%m-%d}",
 		"tooltip": false
 	},
-
-    // The new Portland clock
     "clock#4": {
         "format": "Portland {:%H:%M} 🇺🇸",
         "tooltip": false,
         "interval": 60,
         "timezone": "America/Los_Angeles"
     },
-
+    "clock#5": {
+        "format": "{:%H:%M:%S}",
+        "tooltip": false,
+        "interval": 1,
+        "timezone": "UTC"
+    },
     "custom/clock-separator": {
         "format": "|",
         "tooltip": false
@@ -133,6 +142,13 @@
         "exec-if": "~/.config/waybar/sunset/sunset.sh check",
         "signal": 6
     }, 
+
+   "custom/gpuinfo": {
+        "exec": "~/.config/waybar/scripts/gpuinfo.sh",
+        "interval": 2,
+        "on-click": "kitty nvtop",
+        "return-type": "json",
+   },
 
 	"pulseaudio": {
 		"format": "{icon} {volume:2}%",

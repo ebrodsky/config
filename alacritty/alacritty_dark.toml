@@ -10,3 +10,4 @@ history = 100000
 
 [general]
 import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/everforest_dark.toml"]
+#import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/citylights.toml"]

@@ -54,7 +54,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'kartikp10/noctis.nvim'                     "THEME
     Plug 'rakr/vim-one'                              "THEME
     Plug 'savq/melange'                              "THEME
-    Plug 'luisiacc/gruvbox-baby'                     "THEME
     Plug 'xero/miasma.nvim'                               "THEME
     Plug 'rebelot/kanagawa.nvim'                          "THEME
     Plug 'ramojus/mellifluous.nvim'                       "THEME
@@ -63,6 +62,10 @@ call plug#begin('~/.vim/plugged')
     "Plug 'wincent/base16-nvim'                           "THEME
     Plug 'tinted-theming/tinted-vim'                        "THEME
     Plug 'lifepillar/vim-gruvbox8', {'branch': 'neovim'}    "THEME
+    Plug 'aktersnurra/no-clown-fiesta.nvim'                 "THEME
+    Plug 'lifepillar/vim-solarized8'                        "THEME
+    "Plug 'p00f/alabaster.nvim'                              "THEME
+    "Plug './themes/alabaster.nvim'                          "THEME
     Plug 'shinchu/lightline-gruvbox.vim'                  "THEME FOR LIGHTLINE
     Plug 'itchyny/lightline.vim'
     Plug 'NeogitOrg/neogit' 
@@ -123,17 +126,6 @@ call plug#end()
 """
 "colorscheme base16-sandcastle
 "colorscheme base16-vulcan
-
-"colorscheme nordic
-    "colorscheme onenord
-"for ayu theme:
-"light or mirage or dark
-"let ayucolor = "mirage"
-"colorscheme ayu
-"
-"colorscheme sacredforest
-
-"colorscheme catppuccin-macchiato
 
 "
 "set background=light
@@ -201,6 +193,7 @@ endfunction
 function! SetLightTheme() abort
   set background=light
   colorscheme gruvbox8
+  "colorscheme default
   " Optional lightline configuration
   let g:lightline = {
         \ 'colorscheme': 'ayu_light',
