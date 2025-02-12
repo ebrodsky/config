@@ -59,13 +59,17 @@ call plug#begin('~/.vim/plugged')
     Plug 'ramojus/mellifluous.nvim'                       "THEME
     Plug 'rafi/awesome-vim-colorschemes'                  "THEME
     Plug 'karoliskoncevicius/sacredforest-vim'           "THEME
-    "Plug 'wincent/base16-nvim'                           "THEME
+    Plug 'wincent/base16-nvim'                           "THEME
     Plug 'tinted-theming/tinted-vim'                        "THEME
-    Plug 'lifepillar/vim-gruvbox8', {'branch': 'neovim'}    "THEME
+    "Plug 'lifepillar/vim-gruvbox8', {'branch': 'neovim'}    "THEME
     Plug 'aktersnurra/no-clown-fiesta.nvim'                 "THEME
     Plug 'lifepillar/vim-solarized8'                        "THEME
     "Plug 'p00f/alabaster.nvim'                              "THEME
     "Plug './themes/alabaster.nvim'                          "THEME
+    Plug 'metalelf0/base16-black-metal-scheme'              "THEME
+    Plug 'jordwalke/VimCleanColors'                         "THEME
+    Plug 'craftzdog/solarized-osaka.nvim'                   "THEME
+    Plug 'yorickpeterse/Autumn.vim'                         "THEME
     Plug 'shinchu/lightline-gruvbox.vim'                  "THEME FOR LIGHTLINE
     Plug 'itchyny/lightline.vim'
     Plug 'NeogitOrg/neogit' 
@@ -192,7 +196,14 @@ endfunction
 " Helper function to configure the light theme
 function! SetLightTheme() abort
   set background=light
-  colorscheme gruvbox8
+  "colorscheme gruvbox8
+  "colorscheme hybrid_material
+  "colorscheme hybrid_reverse
+  "colorscheme gruvbox-material
+  "colorscheme spacegray
+  "colorscheme tokyo-city-terminal-light
+  colorscheme tokyo-night-terminal-light
+  "let g:gruvbox_material_foreground = "original"
   "colorscheme default
   " Optional lightline configuration
   let g:lightline = {
@@ -228,11 +239,16 @@ function! SetDarkTheme() abort
   " Set dark background and activate the forestbones theme
   set background=dark
   "colorscheme forestbones
-  colorscheme everforest
-
+  "colorscheme everforest
+  "colorscheme gruvbox-material
+  "colorscheme happy_hacking
+  "colorscheme spacegray
+  "colorscheme solarized-osaka
+  "colorscheme autumn
+  colorscheme terafox
   " Optional lightline configuration (using gruvbox here for consistency)
   let g:lightline = {
-        \ 'colorscheme': 'everforest',
+        "\ 'colorscheme': 'ayu-mirage',
         \ 'active': {
         \   'left': [ [ 'mode', 'paste' ],
         \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]

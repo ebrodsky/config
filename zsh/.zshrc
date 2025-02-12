@@ -123,6 +123,10 @@ alias nvim='nvim_wrapper'
 alias vf="fzf --print0 | xargs -0 -o vim"
 alias lz="lazygit"
 
+function please() {
+  sudo $(fc -ln -1)
+}
+
 function ffind {
     find / -name $1 2>/dev/null
 }

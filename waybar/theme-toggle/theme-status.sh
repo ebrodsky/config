@@ -9,7 +9,7 @@ CURRENT_THEME=$(cat "$CURRENT_THEME_PATH")
 if [ "$CURRENT_THEME" = "light" ]; then
     #echo "🌑"
     echo "🔆"
-else
+elif [ "$CURRENT_THEME" = "dark" ]; then
     #echo "🌔"
     echo "🌕"
 fi
