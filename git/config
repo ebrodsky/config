@@ -3,22 +3,43 @@
 [user]
 	email = eytanbrodsky@gmail.com
 	name = Eytan Brodsky
-
-[merge]
-    tool = nvim
-[mergetool "nvim"]
-    cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
-[mergetool]
-    prompt = false
+[column]
+    ui = auto
+[branch]
+    sort = -committerdate
+[init]
+    defaultBranch = main
 [diff]
-    colormoved = "zebra"
-    colormovedws = "allow-indentation-change"
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
 [push]
     default = simple
+    autoSetupRemote = true
     followTags = true
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+
+[commit]
+    verbose = true
+[rerere]
+    enabled = true
+    autoupdate = true
+[merge]
+    tool = nvim
+    conflictstyle = zdiff3
+[mergetool "nvim"]
+    cmd = nvim-wrapper -f -c \"Gdiffsplit!\" \"$MERGED\"
+[mergetool]
+    prompt = false
+
 [core]
     fileMode = false
     excludesfile = ~/.gitexcludes
+    excludesfile = ~/.gitignore
     editor = nvim
 [color]
     ui = true
@@ -39,10 +60,6 @@
 	subdate = !git submodule update --init --recursive
 	mote = !git fetch --all && git show-branch $(git rev-parse --abbrev-ref HEAD) origin/$(git rev-parse --abbrev-ref HEAD)
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-
-
-[init]
-    defaultBranch = main
 
 [pull]
 	rebase = true
