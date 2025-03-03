@@ -109,8 +109,10 @@ call plug#begin('~/.vim/plugged')
     " Optional for avante
     Plug 'hrsh7th/nvim-cmp'
     Plug 'HakonHarnes/img-clip.nvim'
-
     Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
+
+    Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+    Plug 'pwntester/octo.nvim'
 
 
 call plug#end()
@@ -428,6 +430,9 @@ vim.opt.termguicolors = true
 
 -- empty setup using defaults
 require("nvim-tree").setup()
+
+require("toggleterm").setup()
+require("octo").setup()
 
 -- OR setup with some options
 require("nvim-tree").setup({
