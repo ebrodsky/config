@@ -16,6 +16,9 @@
     colorMoved = plain
     mnemonicPrefix = true
     renames = true
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = nvim -d $LOCAL $REMOTE -c '$wincmd w' -c 'wincmd J'
 [push]
     default = simple
     autoSetupRemote = true
@@ -24,7 +27,8 @@
     prune = true
     pruneTags = true
     all = true
-
+[credential]
+    helper = cache --timeout=3600
 [commit]
     verbose = true
     gpgSign = true
@@ -34,16 +38,27 @@
 [merge]
 	tool = nvimdiff4
 	prompt = false
+    conflictStyle = zdiff3
 [mergetool "nvimdiff4"]
 	cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [mergetool]
     prompt = false
-
 [core]
     fileMode = false
     excludesfile = ~/.gitexcludes
     excludesfile = ~/.gitignore
     editor = nvim
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+	features = side-by-side line-numbers decorations
+	navigate = true
+	whitespace-error-style = 22 reverse
+[delta "decorations"]
+	commit-decoration-style = bold yellow box ul
+	file-style = bold yellow ul
+	file-decoration-style = none
 [color]
     ui = true
 [format]
@@ -63,21 +78,12 @@
 	subdate = !git submodule update --init --recursive
 	mote = !git fetch --all && git show-branch $(git rev-parse --abbrev-ref HEAD) origin/$(git rev-parse --abbrev-ref HEAD)
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-
 [pull]
 	rebase = true
-
 [gpg]
     program = /usr/bin/gpg
 [tag]
     gpgSign = true
     sort = version:refname
 
-[delta]
-	features = side-by-side line-numbers decorations
-	navigate = true
-	whitespace-error-style = 22 reverse
-[delta "decorations"]
-	commit-decoration-style = bold yellow box ul
-	file-style = bold yellow ul
-	file-decoration-style = none
+
