@@ -3,6 +3,8 @@
 [user]
 	email = eytanbrodsky@gmail.com
 	name = Eytan Brodsky
+    username = ebrodsky
+    signingKey = 008018D0F88A5A227FA83A164096020903C720BD
 [column]
     ui = auto
 [branch]
@@ -25,14 +27,15 @@
 
 [commit]
     verbose = true
+    gpgSign = true
 [rerere]
     enabled = true
     autoupdate = true
 [merge]
-    tool = nvim
-    conflictstyle = zdiff3
-[mergetool "nvim"]
-    cmd = nvim-wrapper -f -c \"Gdiffsplit!\" \"$MERGED\"
+	tool = nvimdiff4
+	prompt = false
+[mergetool "nvimdiff4"]
+	cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [mergetool]
     prompt = false
 
@@ -63,3 +66,18 @@
 
 [pull]
 	rebase = true
+
+[gpg]
+    program = /usr/bin/gpg
+[tag]
+    gpgSign = true
+    sort = version:refname
+
+[delta]
+	features = side-by-side line-numbers decorations
+	navigate = true
+	whitespace-error-style = 22 reverse
+[delta "decorations"]
+	commit-decoration-style = bold yellow box ul
+	file-style = bold yellow ul
+	file-decoration-style = none
