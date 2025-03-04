@@ -1,0 +1,51 @@
+# Tokyo Night Light Theme for Alacritty in TOML format
+# Based on the Neovim Tokyo Night Terminal Light theme
+
+# Default colors
+[colors.primary]
+background = "#d5d6db"
+foreground = "#343b58"
+
+# Cursor colors
+[colors.cursor]
+text = "#d5d6db"
+cursor = "#3760bf"
+
+# Selection colors
+[colors.selection]
+text = "#d5d6db"
+background = "#99a7df"
+
+# Normal colors
+[colors.normal]
+black = "#0f0f14"
+red = "#8c4351"
+green = "#485e30"
+yellow = "#8f5e15"
+blue = "#34548a"
+magenta = "#5a4a78"
+cyan = "#166775"
+white = "#343b58"
+
+# Bright colors
+[colors.bright]
+black = "#565a6e"
+red = "#c4746f"
+green = "#8c9e6e"
+yellow = "#c0984f"
+blue = "#6482bd"
+magenta = "#9a7ecc"
+cyan = "#38a7bd"
+white = "#9699a8"
+
+# Dim colors
+[colors.dim]
+black = "#0f0f14"
+red = "#6e3b3b"
+green = "#3b4e2b"
+yellow = "#705a16"
+blue = "#2d4065"
+magenta = "#4b3f63"
+cyan = "#125459"
+white = "#282d42"
+

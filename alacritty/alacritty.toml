@@ -11,4 +11,7 @@ history = 100000
 [general]
 #import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/gruvbox_light.toml"]
 #import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/ashes_light.toml"]
-import = ["/home/eytan/.config/alacritty/zenbones-themes/zenwritten_light.toml"]
+#import = ["/home/eytan/.config/alacritty/zenbones-themes/zenwritten_light.toml"]
+#import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/alabaster.toml"]
+import = ["/home/eytan/.config/alacritty/random-themes/tknl.toml"]
+
