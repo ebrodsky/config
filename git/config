@@ -7,8 +7,8 @@
     signingKey = 008018D0F88A5A227FA83A164096020903C720BD
 [core]
     fileMode = false
-    excludesfile = ~/.gitexcludes
-    excludesfile = ~/.gitignore
+    excludesfile = ~/.config/git/.gitexcludes
+    excludesfile = ~/.config/git/.gitignore
     editor = nvim
     pager = delta
 [column]
