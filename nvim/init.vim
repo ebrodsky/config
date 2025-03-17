@@ -102,7 +102,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'f-person/git-blame.nvim'
     Plug 'klen/nvim-test'
     Plug 'lukas-reineke/indent-blankline.nvim'
-    Plug 'mhinz/vim-startify'
     " Deps for avante
     Plug 'stevearc/dressing.nvim'
     Plug 'MunifTanjim/nui.nvim'
@@ -170,7 +169,6 @@ call plug#end()
 "colorscheme base16-kanagawa
 "colorscheme base16-solarized-dark
 "
-
 
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
@@ -276,6 +274,13 @@ endfunction
 
 command! -nargs=1 Theme call SwitchTheme(<f-args>)
 
+"set light theme by calling the function
+call SetLightTheme()
+" Tokyo Night Light theme-inspired diff colors
+highlight DiffAdd    guifg=#2c6c40 guibg=#d5e5d6 gui=NONE
+highlight DiffDelete guifg=#ab5959 guibg=#f7e3e5 gui=NONE
+highlight DiffChange guifg=#4c6cbe guibg=#d5e1f2 gui=NONE
+highlight DiffText   guifg=#4c6cbe guibg=#b4c9ef gui=bold
 
 let g:unite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0

@@ -5,6 +5,12 @@
 	name = Eytan Brodsky
     username = ebrodsky
     signingKey = 008018D0F88A5A227FA83A164096020903C720BD
+[core]
+    fileMode = false
+    excludesfile = ~/.gitexcludes
+    excludesfile = ~/.gitignore
+    editor = nvim
+    pager = delta
 [column]
     ui = auto
 [branch]
@@ -15,10 +21,10 @@
     algorithm = histogram
     colorMoved = plain
     mnemonicPrefix = true
-    renames = true
     tool = nvimdiff
+    renames = true
 [difftool "nvimdiff"]
-    cmd = nvim -d $LOCAL $REMOTE -c '$wincmd w' -c 'wincmd J'
+    cmd = nvim -d \"$LOCAL\" \"$REMOTE\" -c \"wincmd w\" -c \"wincmd L\"
 [push]
     default = simple
     autoSetupRemote = true
@@ -38,29 +44,40 @@
 [merge]
 	tool = nvimdiff4
 	prompt = false
-    conflictStyle = zdiff3
+    conflictStyle = diff3
 [mergetool "nvimdiff4"]
-	cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+    cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+    keepBackup = false
 [mergetool]
-    prompt = false
-[core]
-    fileMode = false
-    excludesfile = ~/.gitexcludes
-    excludesfile = ~/.gitignore
-    editor = nvim
-    pager = delta
+    keepBackup = false
 [interactive]
     diffFilter = delta --color-only
 [delta]
 	features = side-by-side line-numbers decorations
 	navigate = true
 	whitespace-error-style = 22 reverse
+    plus-style = "syntax #d5e5d6"
+    plus-emph-style = "syntax #a8d2a2"
+    minus-style = "syntax #f7e3e5"
+    minus-emph-style = "syntax #f0a8b0"
 [delta "decorations"]
 	commit-decoration-style = bold yellow box ul
 	file-style = bold yellow ul
 	file-decoration-style = none
 [color]
     ui = true
+[color "diff"]
+    meta = "#9854f1"         # Purple for meta information
+    frag = "#2e7de9"         # Blue for line info
+    old = "#f52a65"          # Red for deleted lines
+    new = "#587539"          # Green for added lines
+    whitespace = "#a8aecb reverse"
+
+[color "diff-highlight"]
+    oldNormal = "#f52a65"    # Red for normal deleted text
+    oldHighlight = "#f52a65 bold" # Brighter red for highlighted deleted text
+    newNormal = "#587539"    # Green for normal added text
+    newHighlight = "#587539 bold" # Brighter green for highlighted added text
 [format]
     pretty = oneline
 [alias]
@@ -85,5 +102,3 @@
 [tag]
     gpgSign = true
     sort = version:refname
-
-
