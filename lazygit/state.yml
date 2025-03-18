@@ -1,0 +1,41 @@
+lastupdatecheck: 0
+recentrepos:
+    - /home/eytan/.config
+    - /home/eytan/bridge/bridge-api
+    - /home/eytan/bridge/bridge-ui
+    - /home/eytan/bridge/blueprints/schema-downstreamdemo
+    - /home/eytan/bridge/blueprints/schema-hcl
+    - /home/eytan/bridge/blueprints/schema-redhat
+    - /home/eytan/bridge/bridge-gateway
+    - /home/eytan/.config/nvim/themes/vim-gruvbox8
+    - /home/eytan/bridge/bridge-sync
+    - /home/eytan/bridge/bridge-docker-dev
+    - /home/eytan/resume
+    - /home/eytan/bridge/bridge
+    - /home/eytan/bridge/bridge-local/ui/bridge-ui
+    - /home/eytan/bridge/bridge-local
+    - /home/eytan/bridge/bridge-local/api/bridge-api
+    - /home/eytan/bridge/blueprints/schema-netapp
+    - /home/eytan/zenbones.nvim
+    - /home/eytan/bridge/blueprints/schema-zoom
+    - /home/eytan/bridge/blueprints/schema-hpi-livingstudio
+    - /home/eytan/bridge/bridge-blueprint
+    - /home/eytan/bridge/blueprints/schema-tetrapak
+    - /home/eytan/parcel-path/shipping-portal
+    - /home/eytan/bridge/blueprints/schema-netapp2
+    - /home/eytan/bridge/blueprints/pineapple-lemonade2
+    - /home/eytan/.config/alacritty/alacritty-colorscheme
+    - /home/eytan/downstream-work/schema-netapp
+    - /home/eytan/downstream-work/schema-hpi-livingstudio
+startuppopupversion: 5
+lastversion: 0.47.2
+customcommandshistory:
+    - w
+hidecommandlog: true
+ignorewhitespaceindiffview: true
+diffcontextsize: 0
+renamesimilaritythreshold: 50
+localbranchsortorder: recency
+remotebranchsortorder: alphabetical
+gitlogorder: topo-order
+gitlogshowgraph: always
