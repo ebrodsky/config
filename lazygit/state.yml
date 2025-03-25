@@ -2,6 +2,10 @@ lastupdatecheck: 0
 recentrepos:
     - /home/eytan/.config
     - /home/eytan/bridge/bridge-api
+    - /home/eytan/ebrodsky.github.io
+    - /home/eytan/portfolio
+    - /home/eytan/froskr/exchange-api
+    - /home/eytan/exchange-api
     - /home/eytan/bridge/bridge-ui
     - /home/eytan/bridge/blueprints/schema-downstreamdemo
     - /home/eytan/bridge/blueprints/schema-hcl
@@ -28,7 +32,7 @@ recentrepos:
     - /home/eytan/downstream-work/schema-netapp
     - /home/eytan/downstream-work/schema-hpi-livingstudio
 startuppopupversion: 5
-lastversion: 0.47.2
+lastversion: 0.48.0
 customcommandshistory:
     - w
 hidecommandlog: true
