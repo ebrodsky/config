@@ -1,59 +1,78 @@
+/* Tokyo Night Light Theme Variables - Bluish Gray */
+@define-color background #d0d4e0;
+@define-color foreground #1a2340;
+
+/* Module backgrounds */
+@define-color module-bg #a0aac2;
+
+/* Workspace colors */
+@define-color workspace-text #1a2340;
+@define-color workspace-active-bg #7586aa;
+@define-color workspace-visible-bg #8d9bbb;
+@define-color workspace-hover-bg #a3a7c0;
+
+/* System colors */
+@define-color red #8c4351;
+@define-color bright-red #c4746f;
+@define-color green #485e30;
+@define-color bright-green #8c9e6e;
+@define-color yellow #8f5e15;
+@define-color bright-yellow #c0984f;
+@define-color blue #34548a;
+@define-color bright-blue #6482bd;
+@define-color magenta #5a4a78;
+@define-color bright-magenta #9a7ecc;
+@define-color cyan #166775;
+@define-color bright-cyan #38a7bd;
+
 * {
-	font-size: 16px;
-	font-family: iosevka, monospace;
+    font-size: 16px;
+    font-family: iosevka, monospace;
 }
 
 window#waybar {
-	background: #292f2b;
-	color: #afdcc6;
+    background: @background;
+    color: @foreground;
 }
 
 #custom-clock-separator {
-  /* Match your background or adjust as needed: */
-  background: #2a4e51;
-  color: #afdcc6;
-
-  /* If you want it smaller than the default 20px: */
-  font-size: 16px;
-
-  /* Spacing around it: */
-  padding: 0 8px;
+    background: @module-bg;
+    color: @foreground;
+    font-size: 16px;
+    padding: 0 8px;
 }
 
 #custom-theme-toggle {
-  /* Match your background or adjust as needed: */
-  background: #2a4e51;
-  color: #afdcc6;
-
-  /* If you want it smaller than the default 20px: */
-  font-size: 16px;
-
-  /* Spacing around it: */
-  padding: 0 8px;
+    background: @module-bg;
+    color: @foreground;
+    font-size: 16px;
+    padding: 0 8px;
 }
 
 #custom-sunset {
-    background: #2a4e51;
-    color: #afdcc6;
+    background: @module-bg;
+    color: @foreground;
 }
 
 #custom-gpuinfo {
-    background: #2a4e51;
-    color: #7da67a;
+    background: @module-bg;
+    color: @green;
 }
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-	color: #2a4e51;
+    color: @module-bg;
 }
+
 #custom-right-arrow-light,
 #custom-left-arrow-light {
-	color: #292b2e;
-	background: #2a4e51;
+    color: @background;
+    background: @module-bg;
 }
+
 #custom-space-box {
-    background: #2a4e51;
-    color: #2a4e51;
+    background: @module-bg;
+    color: @module-bg;
 }
 
 #workspaces,
@@ -73,53 +92,54 @@ window#waybar {
 #disk,
 #keyboard-state label.capslock.locked,
 #tray {
-	background: #2a4e51;
+    background: @module-bg;
 }
 
 #workspaces button {
-	padding: 0 2px;
-	color: #fdf6e3;
-}
-
-
-#workspaces button.visible {
-  background-color: #afdcc6;
-  /*color: #bbbbbb;*/
-  color: #292f2b;
+    padding: 0 2px;
+    color: @workspace-text;
 }
 
 #workspaces button.active {
-  background-color: #7da67a;
-  /*color: #bbbbbb;*/
-  color: #fdf6e3;
+    background-color: @workspace-active-bg;
+    color: #ffffff;
+}
+
+#workspaces button.visible {
+    background-color: @workspace-visible-bg;
+    color: #ffffff;
 }
 
 #workspaces button:hover {
-	box-shadow: inherit;
-	text-shadow: inherit;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: @workspace-hover-bg;
+    border: @workspace-hover-bg;
+    padding: 0 3px;
 }
-#workspaces button:hover {
-	background: #1a1a1a;
-	border: #1a1a1a;
-	padding: 0 3px;
-}
+
 #pulseaudio {
-	color: #fbc46f;
+    color: #b05c15;
 }
+
 #memory {
-	color: #fbc46f;
+    color: #b05c15;
 }
+
 #cpu {
-	color: #d96f68;
+    color: #b43341;
 }
+
 #battery {
-	color: #afdcc6;
+    color: #304e1c;
 }
+
 #disk {
-	color: #fbc46f;
+    color: #b05c15;
 }
-#keyboard-state label.capslock.locked{
-    color: #afdcc6;
+
+#keyboard-state label.capslock.locked {
+    color: @green;
 }
 
 #clock,
@@ -131,22 +151,20 @@ window#waybar {
 #battery,
 #keyboard-state.capslock.locked,
 #disk {
-	padding: 0 5px;
+    padding: 0 5px;
 }
 
 #keyboard-state label.capslock {
-    color: #f2766b;
-    background: #2a4e51;
+    color: #e5574e;
+    background: @module-bg;
     padding: 0 0px;
     margin: 0 0px;
     font-size: 0px;
 }
+
 #keyboard-state label.capslock.locked {
-    color: #f2766b;
-    background: #2a4e51;
-	padding: 0 5px;
+    color: #e5574e;
+    background: @module-bg;
+    padding: 0 5px;
     font-size: 16px;
 }
-
-
-
