@@ -1,29 +1,31 @@
-/* Tokyo Night Light Theme Variables - Bluish Gray */
-@define-color background #d0d4e0;
-@define-color foreground #1a2340;
+/* Tokyo Night Light Theme Variables - Based on Exact Colors */
+@define-color background #e6e7ed;
+@define-color foreground #343b58;
 
 /* Module backgrounds */
-@define-color module-bg #a0aac2;
+@define-color module-bg #c0c5d9;
 
 /* Workspace colors */
-@define-color workspace-text #1a2340;
-@define-color workspace-active-bg #7586aa;
-@define-color workspace-visible-bg #8d9bbb;
-@define-color workspace-hover-bg #a3a7c0;
+@define-color workspace-text #343b58;
+@define-color workspace-active-bg #2959aa;
+@define-color workspace-visible-bg #0f4b6e;
+@define-color workspace-hover-bg #5a3e8e;
+@define-color workspace-focused-bg #006c86;
 
-/* System colors */
+/* System colors - from Tokyo Night Light palette */
 @define-color red #8c4351;
-@define-color bright-red #c4746f;
-@define-color green #485e30;
-@define-color bright-green #8c9e6e;
+@define-color orange #965027;
 @define-color yellow #8f5e15;
-@define-color bright-yellow #c0984f;
-@define-color blue #34548a;
-@define-color bright-blue #6482bd;
-@define-color magenta #5a4a78;
-@define-color bright-magenta #9a7ecc;
-@define-color cyan #166775;
-@define-color bright-cyan #38a7bd;
+@define-color yellow-muted #634f30;
+@define-color green #385f0d;
+@define-color teal #33635c;
+@define-color cyan #006c86;
+@define-color blue-dark #0f4b6e;
+@define-color blue #2959aa;
+@define-color magenta #5a3e8e;
+@define-color fg-dark #343b58;
+@define-color fg-muted #40434f;
+@define-color comment #6c6e75;
 
 * {
     font-size: 16px;
@@ -100,13 +102,18 @@ window#waybar {
     color: @workspace-text;
 }
 
+#workspaces button.visible {
+    background-color: @workspace-visible-bg;
+    color: #ffffff;
+}
+
 #workspaces button.active {
     background-color: @workspace-active-bg;
     color: #ffffff;
 }
 
-#workspaces button.visible {
-    background-color: @workspace-visible-bg;
+#workspaces button.focused {
+    background-color: @workspace-focused-bg;
     color: #ffffff;
 }
 
@@ -116,26 +123,27 @@ window#waybar {
     background: @workspace-hover-bg;
     border: @workspace-hover-bg;
     padding: 0 3px;
+    color: #ffffff;
 }
 
 #pulseaudio {
-    color: #b05c15;
+    color: @yellow;
 }
 
 #memory {
-    color: #b05c15;
+    color: @orange;
 }
 
 #cpu {
-    color: #b43341;
+    color: @red;
 }
 
 #battery {
-    color: #304e1c;
+    color: @green;
 }
 
 #disk {
-    color: #b05c15;
+    color: @yellow;
 }
 
 #keyboard-state label.capslock.locked {
@@ -155,7 +163,7 @@ window#waybar {
 }
 
 #keyboard-state label.capslock {
-    color: #e5574e;
+    color: @red;
     background: @module-bg;
     padding: 0 0px;
     margin: 0 0px;
@@ -163,7 +171,7 @@ window#waybar {
 }
 
 #keyboard-state label.capslock.locked {
-    color: #e5574e;
+    color: @red;
     background: @module-bg;
     padding: 0 5px;
     font-size: 16px;
