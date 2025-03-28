@@ -245,7 +245,7 @@ function! SetDarkTheme() abort
   "colorscheme spacegray
   "colorscheme solarized-osaka
   "colorscheme autumn
-  colorscheme terafox
+  colorscheme everforest
   " Optional lightline configuration (using gruvbox here for consistency)
   let g:lightline = {
         "\ 'colorscheme': 'ayu-mirage',
