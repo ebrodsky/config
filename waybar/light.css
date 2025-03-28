@@ -1,26 +1,31 @@
-/* Everforest Dark Theme Variables */
-@define-color background #2d353b;
-@define-color foreground #d3c6aa;
+/* Tokyo Night Light Theme Variables - Based on Exact Colors */
+@define-color background #e6e7ed;
+@define-color foreground #343b58;
 
 /* Module backgrounds */
-@define-color module-bg #3d484d;
+@define-color module-bg #c0c5d9;
 
 /* Workspace colors */
-@define-color workspace-text #d3c6aa;
-@define-color workspace-active-bg #83c092;
-@define-color workspace-visible-bg #7fbbb3;
-@define-color workspace-hover-bg #d699b6;
-@define-color workspace-focused-bg #a7c080;
+@define-color workspace-text #343b58;
+@define-color workspace-active-bg #2959aa;
+@define-color workspace-visible-bg #0f4b6e;
+@define-color workspace-hover-bg #5a3e8e;
+@define-color workspace-focused-bg #006c86;
 
-/* System colors - from Everforest Dark palette */
-@define-color black #475258;
-@define-color red #e67e80;
-@define-color green #a7c080;
-@define-color yellow #dbbc7f;
-@define-color blue #7fbbb3;
-@define-color magenta #d699b6;
-@define-color cyan #83c092;
-@define-color white #d3c6aa;
+/* System colors - from Tokyo Night Light palette */
+@define-color red #8c4351;
+@define-color orange #965027;
+@define-color yellow #8f5e15;
+@define-color yellow-muted #634f30;
+@define-color green #385f0d;
+@define-color teal #33635c;
+@define-color cyan #006c86;
+@define-color blue-dark #0f4b6e;
+@define-color blue #2959aa;
+@define-color magenta #5a3e8e;
+@define-color fg-dark #343b58;
+@define-color fg-muted #40434f;
+@define-color comment #6c6e75;
 
 * {
     font-size: 16px;
@@ -99,17 +104,17 @@ window#waybar {
 
 #workspaces button.visible {
     background-color: @workspace-visible-bg;
-    color: @background;
+    color: #ffffff;
 }
 
 #workspaces button.active {
     background-color: @workspace-active-bg;
-    color: @background;
+    color: #ffffff;
 }
 
 #workspaces button.focused {
     background-color: @workspace-focused-bg;
-    color: @background;
+    color: #ffffff;
 }
 
 #workspaces button:hover {
@@ -118,7 +123,7 @@ window#waybar {
     background: @workspace-hover-bg;
     border: @workspace-hover-bg;
     padding: 0 3px;
-    color: @background;
+    color: #ffffff;
 }
 
 #pulseaudio {
@@ -126,7 +131,7 @@ window#waybar {
 }
 
 #memory {
-    color: @magenta;
+    color: @orange;
 }
 
 #cpu {
