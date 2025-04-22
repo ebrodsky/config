@@ -174,6 +174,8 @@ let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
 
+let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'vim', 'rust']
+
 " When using airline to avoid double mode show
 set noshowmode
 
@@ -199,10 +201,9 @@ function! SetLightTheme() abort
   "colorscheme gruvbox8
   "colorscheme hybrid_material
   "colorscheme hybrid_reverse
-  "colorscheme gruvbox-material
+  colorscheme gruvbox-material
   "colorscheme spacegray
-  "colorscheme tokyo-city-terminal-light
-  colorscheme tokyo-night-terminal-light
+  "colorscheme tokyo-night-terminal-light
   "let g:gruvbox_material_foreground = "original"
   "colorscheme default
   " Optional lightline configuration
@@ -240,12 +241,12 @@ function! SetDarkTheme() abort
   set background=dark
   "colorscheme forestbones
   "colorscheme everforest
-  "colorscheme gruvbox-material
+  colorscheme gruvbox-material
   "colorscheme happy_hacking
   "colorscheme spacegray
   "colorscheme solarized-osaka
   "colorscheme autumn
-  colorscheme everforest
+  "colorscheme everforest
   " Optional lightline configuration (using gruvbox here for consistency)
   let g:lightline = {
         "\ 'colorscheme': 'ayu-mirage',

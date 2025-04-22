@@ -71,3 +71,10 @@ VirtualBox/
 chromium/
 bcompare5/
 mirage/
+lazygit/state.yml
+.wrangler/
+configstore
+lazygit/
+mirage
+nextjs-nodejs
+
