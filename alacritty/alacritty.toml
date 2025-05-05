@@ -9,6 +9,9 @@ style = "monospace"
 history = 100000
 
 [general]
-import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/gruvbox_light.toml"]
-#import = ["/home/eytan/.config/alacritty/random-themes/tknl.toml"]
-
+import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/gruvbox_dark.toml"]
+#import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/spacegray.toml"]
+#import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/citylights.toml"]
+#import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/autumn.toml"]
+#import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/terafox.toml"]
+#import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/everforest_dark.toml"]

@@ -98,7 +98,9 @@
 	},
 	"clock#2": {
 		"format": "🇦🇷 Bs. As. {:%H:%M}",
-		"tooltip": false
+		"tooltip": false,
+        "interval": 60,
+        "timezone": "America/Argentina/Buenos_Aires"
 	},
 	"clock#3": {
 		"format": "{:%m-%d}",
