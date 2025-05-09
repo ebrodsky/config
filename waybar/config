@@ -97,7 +97,7 @@
 		"tooltip": false
 	},
 	"clock#2": {
-		"format": "🇦🇷 Bs. As. {:%H:%M}",
+		"format": "{:%H:%M} ART",
 		"tooltip": false,
         "interval": 60,
         "timezone": "America/Argentina/Buenos_Aires"
@@ -107,7 +107,7 @@
 		"tooltip": false
 	},
     "clock#4": {
-        "format": "Portland {:%H:%M} 🇺🇸",
+        "format": "{:%H:%M} PST",
         "tooltip": false,
         "interval": 60,
         "timezone": "America/Los_Angeles"
