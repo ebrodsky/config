@@ -1,6 +1,11 @@
 lastupdatecheck: 0
 recentrepos:
     - /home/eytan/.config
+    - /home/eytan/bitteryerba
+    - /home/eytan/Notes
+    - /home/eytan/aoc2024solns/aoc2024d6
+    - /home/eytan/aoc2024solns/aoc2024d5
+    - /home/eytan/syndica-takehome
     - /home/eytan/bridge/bridge-api
     - /home/eytan/ebrodsky.github.io
     - /home/eytan/portfolio
@@ -32,7 +37,7 @@ recentrepos:
     - /home/eytan/downstream-work/schema-netapp
     - /home/eytan/downstream-work/schema-hpi-livingstudio
 startuppopupversion: 5
-lastversion: 0.48.0
+lastversion: 0.50.0
 customcommandshistory:
     - w
 hidecommandlog: true
