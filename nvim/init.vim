@@ -201,9 +201,9 @@ function! SetLightTheme() abort
   "colorscheme gruvbox8
   "colorscheme hybrid_material
   "colorscheme hybrid_reverse
-  colorscheme gruvbox-material
+  "colorscheme gruvbox-material
   "colorscheme spacegray
-  "colorscheme tokyo-night-terminal-light
+  colorscheme tokyo-night-terminal-light
   "let g:gruvbox_material_foreground = "original"
   "colorscheme default
   " Optional lightline configuration
