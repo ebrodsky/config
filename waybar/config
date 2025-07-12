@@ -56,6 +56,9 @@
 		"custom/left-arrow-dark",
 		"disk",
 		"custom/left-arrow-light",
+        "custom/left-arrow-dark",
+		"custom/vpninfo",
+		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"tray"
 	],
@@ -149,6 +152,12 @@
         "exec": "~/.config/waybar/scripts/gpuinfo.sh",
         "interval": 2,
         "on-click": "kitty nvtop",
+        "return-type": "json",
+   },
+
+   "custom/vpninfo": {
+        "exec": "~/.config/waybar/scripts/vpninfo.sh",
+        "interval": 5,
         "return-type": "json",
    },
 

@@ -203,7 +203,8 @@ function! SetLightTheme() abort
   "colorscheme hybrid_reverse
   "colorscheme gruvbox-material
   "colorscheme spacegray
-  colorscheme tokyo-night-terminal-light
+  "colorscheme tokyo-night-terminal-light
+  colorscheme everforest
   "let g:gruvbox_material_foreground = "original"
   "colorscheme default
   " Optional lightline configuration
@@ -240,13 +241,12 @@ function! SetDarkTheme() abort
   " Set dark background and activate the forestbones theme
   set background=dark
   "colorscheme forestbones
-  "colorscheme everforest
-  colorscheme gruvbox-material
+  colorscheme everforest
+  "colorscheme gruvbox-material
   "colorscheme happy_hacking
   "colorscheme spacegray
   "colorscheme solarized-osaka
   "colorscheme autumn
-  "colorscheme everforest
   " Optional lightline configuration (using gruvbox here for consistency)
   let g:lightline = {
         "\ 'colorscheme': 'ayu-mirage',

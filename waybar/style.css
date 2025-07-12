@@ -56,6 +56,11 @@ window#waybar {
     color: @green;
 }
 
+#custom-vpninfo {
+    background: @module-bg;
+    color: @red; /* VPN info often uses red for alerts */
+}
+
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
     color: @module-bg;
@@ -88,6 +93,7 @@ window#waybar {
 #cpu,
 #battery,
 #disk,
+#custom-vpninfo,
 #keyboard-state label.capslock.locked,
 #tray {
     background: @module-bg;
@@ -152,6 +158,7 @@ window#waybar {
 #pulseaudio,
 #custom-sunset,
 #custom-gpuinfo,
+#custom-vpninfo,
 #memory,
 #cpu,
 #battery,
