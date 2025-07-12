@@ -39,7 +39,7 @@
 		"pulseaudio",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
-		"network",
+		"custom/network",
 		"custom/left-arrow-light",
         "custom/left-arrow-dark",
 		"custom/gpuinfo",
@@ -55,9 +55,6 @@
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"disk",
-		"custom/left-arrow-light",
-        "custom/left-arrow-dark",
-		"custom/vpninfo",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"tray"
@@ -155,11 +152,6 @@
         "return-type": "json",
    },
 
-   "custom/vpninfo": {
-        "exec": "~/.config/waybar/scripts/vpninfo.sh",
-        "interval": 5,
-        "return-type": "json",
-   },
 
 	"pulseaudio": {
 		"format": "{icon} {volume:2}%",
@@ -176,18 +168,11 @@
 		"on-click-right": "pavucontrol"
 	},
 
-    "network": {
-        "format": "{ifname}",
-        "format-wifi": "{essid} ({signalStrength}%) ᯤ",
-        "yformat-ethernet": "{ifname} 🖧",
-        "format-disconnected": "", //An empty format will hide the module.
-        "format-disconnected": "🌐",
-        "tooltip-format": "{ifname}",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ᯤ",
-        "tooltip-format-ethernet": "{ifname} 🖧",
-        "tooltip-format-disconnected": "Disconnected",
-        "max-length": 50
-    },
+   "custom/network": {
+        "exec": "~/.config/waybar/scripts/vpninfo.sh",
+        "interval": 5,
+        "return-type": "json"
+   },
 
 	"memory": {
 		"interval": 5,

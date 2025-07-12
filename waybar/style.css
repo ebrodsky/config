@@ -61,8 +61,13 @@ window#waybar {
     color: @red; /* Default red for disconnected */
 }
 
-#custom-vpninfo.connected {
-    color: @green; /* Green when connected */
+#custom-network {
+    background: @module-bg;
+    color: @foreground;
+}
+
+#custom-network.connected {
+    color: @green; /* Green when VPN connected */
 }
 
 #custom-right-arrow-dark,
@@ -91,7 +96,7 @@ window#waybar {
 #custom-theme-toggle,
 #custom-sunset,
 #pulseaudio,
-#network,
+#custom-network,
 #custom-gpuinfo,
 #memory,
 #cpu,
@@ -163,6 +168,7 @@ window#waybar {
 #custom-sunset,
 #custom-gpuinfo,
 #custom-vpninfo,
+#custom-network,
 #memory,
 #cpu,
 #battery,
