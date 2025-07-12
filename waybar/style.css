@@ -58,7 +58,11 @@ window#waybar {
 
 #custom-vpninfo {
     background: @module-bg;
-    color: @red; /* VPN info often uses red for alerts */
+    color: @red; /* Default red for disconnected */
+}
+
+#custom-vpninfo.connected {
+    color: @green; /* Green when connected */
 }
 
 #custom-right-arrow-dark,
