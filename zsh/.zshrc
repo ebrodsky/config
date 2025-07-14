@@ -11,8 +11,9 @@ export ZSH="$HOME/.config/zsh/.oh-my-zsh"
 #ZSH_THEME="eastwood"
 #ZSH_THEME="pygmalion"
 #ZSH_THEME="simple"
-ZSH_THEME="gallois"
+#ZSH_THEME="gallois"
 #ZSH_THEME="muse"
+ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
