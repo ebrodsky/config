@@ -84,13 +84,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-telescope/telescope.nvim' 
     Plug 'nvim-telescope/telescope-file-browser.nvim'
     Plug 'nvim-tree/nvim-web-devicons'
-    Plug 'preservim/nerdtree' |
-            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
-            \ Plug 'ryanoasis/vim-devicons' |
-            \ Plug 'tiagofumo/vim-nerdtree-syntax-highlight' |
-            \ Plug 'PhilRunninger/nerdtree-visual-selection' |
-            \ Plug 'PhilRunninger/nerdtree-buffer-ops'
-
     Plug 'github/copilot.vim'
     Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'ray-x/go.nvim'
@@ -288,10 +281,10 @@ let g:vimfiler_force_overwrite_statusline = 0
 let g:vimshell_force_overwrite_statusline = 0
 
 "NERDTree settings
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTreeToggle<CR> 
+nnoremap <leader>n :NvimTreeFocus<CR>
+nnoremap <C-n> :NvimTreeToggle<CR> 
 " Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NvimTree') && b:NvimTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
 
 
 inoremap <silent><expr> <TAB>
