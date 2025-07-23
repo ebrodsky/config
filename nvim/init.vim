@@ -198,6 +198,7 @@ function! SetLightTheme() abort
   "colorscheme spacegray
   "colorscheme tokyo-night-terminal-light
   colorscheme everforest
+  let g:everforest_disable_italic_comment = 1
   "let g:gruvbox_material_foreground = "original"
   "colorscheme default
   " Optional lightline configuration
