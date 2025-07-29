@@ -23,7 +23,7 @@
 @define-color white #fbf1c7;       /* fg0 (brightest foreground) */
 
 * {
-    font-size: 16px;
+    font-size: 18px;
     font-family: iosevka, monospace;
 }
 
