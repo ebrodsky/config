@@ -70,6 +70,11 @@ window#waybar {
     color: @green; /* Green when VPN connected */
 }
 
+#custom-pomodoro {
+    background: @module-bg;
+    color: @green; /* Or an accent color like @yellow */
+}
+
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
     color: @module-bg;
@@ -98,6 +103,7 @@ window#waybar {
 #pulseaudio,
 #custom-network,
 #custom-gpuinfo,
+#custom-pomodoro,
 #memory,
 #cpu,
 #battery,
@@ -169,6 +175,7 @@ window#waybar {
 #custom-gpuinfo,
 #custom-vpninfo,
 #custom-network,
+#custom-pomodoro,
 #memory,
 #cpu,
 #battery,

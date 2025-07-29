@@ -26,6 +26,9 @@
         "custom/right-arrow-dark"
 	],
 	"modules-right": [
+        "custom/left-arrow-dark",
+		"custom/pomodoro",
+		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"keyboard-state",
 		"custom/left-arrow-light",
@@ -144,6 +147,14 @@
         "exec-if": "~/.config/waybar/sunset/sunset.sh check",
         "signal": 6
     }, 
+
+   "custom/pomodoro": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "waybar-module-pomodoro",
+        "on-click": "waybar-module-pomodoro toggle",
+        "on-click-right": "waybar-module-pomodoro reset",
+    },
 
    "custom/gpuinfo": {
         "exec": "~/.config/waybar/scripts/gpuinfo.sh",
