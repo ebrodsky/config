@@ -70,7 +70,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'jordwalke/VimCleanColors'                         "THEME
     Plug 'craftzdog/solarized-osaka.nvim'                   "THEME
     Plug 'yorickpeterse/Autumn.vim'                         "THEME
-    Plug 'shinchu/lightline-gruvbox.vim'                  "THEME FOR LIGHTLINE
+    Plug 'shinchu/lightline-gruvbox.vim'                    "THEME FOR LIGHTLINE
     Plug 'itchyny/lightline.vim'
     Plug 'NeogitOrg/neogit' 
         Plug 'sindrets/diffview.nvim'
@@ -191,19 +191,22 @@ endfunction
 " Helper function to configure the light theme
 function! SetLightTheme() abort
   set background=light
-  "colorscheme gruvbox8
+  let g:gruvbox_italics = 0
+  colorscheme gruvbox8
   "colorscheme hybrid_material
   "colorscheme hybrid_reverse
   "colorscheme gruvbox-material
   "colorscheme spacegray
   "colorscheme tokyo-night-terminal-light
-  colorscheme everforest
-  let g:everforest_disable_italic_comment = 1
+
+  "colorscheme everforest
+  "let g:everforest_disable_italic_comment = 1
+
   "let g:gruvbox_material_foreground = "original"
   "colorscheme default
   " Optional lightline configuration
   let g:lightline = {
-        \ 'colorscheme': 'ayu_light',
+        \ 'colorscheme': 'gruvbox',
         \ 'active': {
         \   'left': [ [ 'mode', 'paste' ],
         \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -235,15 +238,15 @@ function! SetDarkTheme() abort
   " Set dark background and activate the forestbones theme
   set background=dark
   "colorscheme forestbones
-  colorscheme everforest
-  "colorscheme gruvbox-material
+  "colorscheme everforest
+  let g:gruvbox_italics = 0
+  colorscheme gruvbox8
   "colorscheme happy_hacking
   "colorscheme spacegray
-  "colorscheme solarized-osaka
   "colorscheme autumn
   " Optional lightline configuration (using gruvbox here for consistency)
   let g:lightline = {
-        "\ 'colorscheme': 'ayu-mirage',
+        \ 'colorscheme': 'gruvbox',
         \ 'active': {
         \   'left': [ [ 'mode', 'paste' ],
         \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
