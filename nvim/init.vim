@@ -206,7 +206,7 @@ function! SetLightTheme() abort
   "colorscheme default
   " Optional lightline configuration
   let g:lightline = {
-        \ 'colorscheme': 'gruvbox',
+        \ 'colorscheme': 'powerline',
         \ 'active': {
         \   'left': [ [ 'mode', 'paste' ],
         \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -246,7 +246,7 @@ function! SetDarkTheme() abort
   "colorscheme autumn
   " Optional lightline configuration (using gruvbox here for consistency)
   let g:lightline = {
-        \ 'colorscheme': 'gruvbox',
+        \ 'colorscheme': 'powerline',
         \ 'active': {
         \   'left': [ [ 'mode', 'paste' ],
         \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
