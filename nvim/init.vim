@@ -70,6 +70,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'jordwalke/VimCleanColors'                         "THEME
     Plug 'craftzdog/solarized-osaka.nvim'                   "THEME
     Plug 'yorickpeterse/Autumn.vim'                         "THEME
+    Plug 'everviolet/nvim', { 'as': 'evergarden' }          "THEME
     Plug 'shinchu/lightline-gruvbox.vim'                    "THEME FOR LIGHTLINE
     Plug 'itchyny/lightline.vim'
     Plug 'NeogitOrg/neogit' 
@@ -191,8 +192,8 @@ endfunction
 " Helper function to configure the light theme
 function! SetLightTheme() abort
   set background=light
-  let g:gruvbox_italics = 0
-  colorscheme gruvbox8
+  "let g:gruvbox_italics = 0
+  colorscheme evergarden-summer
   "colorscheme hybrid_material
   "colorscheme hybrid_reverse
   "colorscheme gruvbox-material
@@ -239,8 +240,9 @@ function! SetDarkTheme() abort
   set background=dark
   "colorscheme forestbones
   "colorscheme everforest
-  let g:gruvbox_italics = 0
-  colorscheme gruvbox8
+  "let g:gruvbox_italics = 0
+  colorscheme evergarden
+
   "colorscheme happy_hacking
   "colorscheme spacegray
   "colorscheme autumn
@@ -458,6 +460,35 @@ require'lspconfig'.pyright.setup{}
 require'aerial'.setup()
 require("ibl").setup()
 require("nvim-test").setup{}
+
+require 'evergarden'.setup {
+  theme = {
+    variant = 'fall', -- 'winter'|'fall'|'spring'|'summer'
+    accent = 'green',
+  },
+  editor = {
+    transparent_background = false,
+    override_terminal = true,
+    sign = { color = 'none' },
+    float = {
+      color = 'mantle',
+      solid_border = false,
+    },
+    completion = {
+      color = 'surface0',
+    },
+  },
+  style = {
+    tabline = { 'reverse' },
+    search = { 'italic', 'reverse' },
+    incsearch = { 'italic', 'reverse' },
+    types = { 'bold' },
+    keyword = { 'bold' },
+    comment = { 'italic' },
+  },
+  overrides = {},
+  color_overrides = {},
+}
 
 require('avante_lib').load()
 require('avante').setup()
