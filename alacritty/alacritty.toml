@@ -14,4 +14,6 @@ history = 100000
 #import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/citylights.toml"]
 #import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/autumn.toml"]
 #import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/terafox.toml"]
-import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/everforest_dark.toml"]
+#import = ["/home/eytan/.config/alacritty/alacritty-colorscheme/themes/everforest_dark.toml"]
+import = ["/home/eytan/.config/alacritty/everviolet/themes/evergarden-fall-snow.toml"]
+
