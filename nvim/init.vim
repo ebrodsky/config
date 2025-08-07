@@ -72,7 +72,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'yorickpeterse/Autumn.vim'                         "THEME
     Plug 'everviolet/nvim', { 'as': 'evergarden' }          "THEME
     Plug 'shinchu/lightline-gruvbox.vim'                    "THEME FOR LIGHTLINE
-    Plug 'itchyny/lightline.vim'
+    "Plug 'itchyny/lightline.vim'
     Plug 'NeogitOrg/neogit' 
         Plug 'sindrets/diffview.nvim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -84,7 +84,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim' 
     Plug 'nvim-telescope/telescope-file-browser.nvim'
-    Plug 'nvim-tree/nvim-web-devicons'
+    Plug 'nvim-lualine/lualine.nvim'
+        Plug 'nvim-tree/nvim-web-devicons'
     Plug 'github/copilot.vim'
     Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'ray-x/go.nvim'
@@ -173,22 +174,6 @@ let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'vim', 'rust']
 " When using airline to avoid double mode show
 set noshowmode
 
-function! LightlineFilename()
-  let root = fnamemodify(get(b:, 'git_dir'), ':h')
-  let path = expand('%:p')
-  if path[:len(root)-1] ==# root
-    return path[len(root)+1:]
-  endif
-  return expand('%')
-endfunction
-
-function! LightlineReload()
-  call lightline#init()
-  call lightline#colorscheme()
-  call lightline#update()
-endfunction
-
-
 " Helper function to configure the light theme
 function! SetLightTheme() abort
   set background=light
@@ -205,19 +190,6 @@ function! SetLightTheme() abort
 
   "let g:gruvbox_material_foreground = "original"
   "colorscheme default
-  " Optional lightline configuration
-  let g:lightline = {
-        \ 'colorscheme': 'powerline',
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-        \ },
-        \ 'component_function': {
-        \   'gitbranch': 'FugitiveHead',
-        \   'filename': 'LightlineFilename',
-        \ },
-    \ }
-  call LightlineReload()
 endfunction
 
 " Helper function to configure the dark theme
@@ -246,19 +218,6 @@ function! SetDarkTheme() abort
   "colorscheme happy_hacking
   "colorscheme spacegray
   "colorscheme autumn
-  " Optional lightline configuration (using gruvbox here for consistency)
-  let g:lightline = {
-        \ 'colorscheme': 'powerline',
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-        \ },
-        \ 'component_function': {
-        \   'gitbranch': 'FugitiveHead',
-        \   'filename': 'LightlineFilename',
-        \ },
-    \ }
-  call LightlineReload()
 endfunction
 
 " Main function to switch between themes
@@ -460,6 +419,17 @@ require'lspconfig'.pyright.setup{}
 require'aerial'.setup()
 require("ibl").setup()
 require("nvim-test").setup{}
+
+require('lualine').setup({
+    sections = {
+        lualine_c = {
+            {
+            'filename',
+            path = 1
+            }
+        },
+    },
+})
 
 require 'evergarden'.setup {
   theme = {
