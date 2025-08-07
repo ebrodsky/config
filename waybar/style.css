@@ -1,26 +1,26 @@
-/* Gruvbox Dark Theme Variables */
-@define-color background #282828; /* bg0 */
-@define-color foreground #ebdbb2; /* fg */
+/* Evergarden Fall Purple (Everviolet) Theme Variables */
+@define-color background #232a2e; /* primary background */
+@define-color foreground #f8f9e8; /* primary foreground */
 
 /* Module backgrounds */
-@define-color module-bg #3c3836; /* bg1 */
+@define-color module-bg #2b3337; /* bright black */
 
 /* Workspace colors */
-@define-color workspace-text #ebdbb2; /* fg */
-@define-color workspace-active-bg #b8bb26; /* green_light */
-@define-color workspace-visible-bg #83a598; /* blue_light */
-@define-color workspace-hover-bg #fe8019;   /* orange_light */
-@define-color workspace-focused-bg #b8bb26; /* green_light (or choose another, e.g., aqua_light #8ec07c) */
+@define-color workspace-text #f8f9e8; /* foreground */
+@define-color workspace-active-bg #d2bdf3; /* cursor/accent purple */
+@define-color workspace-visible-bg #b2caed; /* blue */
+@define-color workspace-hover-bg #f7a182;   /* search matches orange */
+@define-color workspace-focused-bg #d2bdf3; /* cursor/accent purple */
 
-/* System colors - from Gruvbox Dark palette */
-@define-color black #1d2021;       /* bg0_h (darkest) or #928374 (gray_245 for a dark text on light bg) */
-@define-color red #fb4934;         /* red_light */
-@define-color green #b8bb26;       /* green_light */
-@define-color yellow #fabd2f;      /* yellow_light */
-@define-color blue #83a598;        /* blue_light */
-@define-color magenta #d3869b;     /* purple_light */
-@define-color cyan #8ec07c;        /* aqua_light */
-@define-color white #fbf1c7;       /* fg0 (brightest foreground) */
+/* System colors - from Evergarden Fall Purple palette */
+@define-color black #232a2e;       /* normal black */
+@define-color red #f57f82;         /* normal red */
+@define-color green #cbe3b3;       /* normal green */
+@define-color yellow #f5d098;      /* normal yellow */
+@define-color blue #b2caed;        /* normal blue */
+@define-color magenta #f3c0e5;     /* normal magenta */
+@define-color cyan #b3e3ca;        /* normal cyan */
+@define-color white #f8f9e8;       /* normal white */
 
 * {
     font-size: 18px;

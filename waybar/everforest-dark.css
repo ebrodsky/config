@@ -1,0 +1,198 @@
+/* Everforest Dark Theme Variables */
+@define-color background #2d353b; /* bg0 */
+@define-color foreground #d3c6aa; /* fg */
+
+/* Module backgrounds */
+@define-color module-bg #343f44; /* bg1 */
+
+/* Workspace colors */
+@define-color workspace-text #d3c6aa; /* fg */
+@define-color workspace-active-bg #a7c080; /* green */
+@define-color workspace-visible-bg #7fbbb3; /* aqua */
+@define-color workspace-hover-bg #e69875;   /* orange */
+@define-color workspace-focused-bg #a7c080; /* green */
+
+/* System colors - from Everforest Dark palette */
+@define-color black #374247;       /* bg2 */
+@define-color red #e67e80;         /* red */
+@define-color green #a7c080;       /* green */
+@define-color yellow #dbbc7f;      /* yellow */
+@define-color blue #7fbbb3;        /* blue/aqua */
+@define-color magenta #d699b6;     /* purple */
+@define-color cyan #83c092;        /* green variant */
+@define-color white #d3c6aa;       /* fg */
+
+* {
+    font-size: 18px;
+    font-family: iosevka, monospace;
+}
+
+window#waybar {
+    background: @background;
+    color: @foreground;
+}
+
+#custom-clock-separator {
+    background: @module-bg;
+    color: @foreground;
+    font-size: 16px;
+    padding: 0 8px;
+}
+
+#custom-theme-toggle {
+    background: @module-bg;
+    color: @foreground;
+    font-size: 16px;
+    padding: 0 8px;
+}
+
+#custom-sunset {
+    background: @module-bg;
+    color: @foreground;
+}
+
+#custom-gpuinfo {
+    background: @module-bg;
+    color: @green;
+}
+
+#custom-vpninfo {
+    background: @module-bg;
+    color: @red;
+}
+
+#custom-network {
+    background: @module-bg;
+    color: @foreground;
+}
+
+#custom-network.connected {
+    color: @green;
+}
+
+#custom-pomodoro {
+    background: @module-bg;
+    color: @green;
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+    color: @module-bg;
+    background: transparent;
+}
+
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+    color: @background;
+    background: @module-bg;
+}
+
+#custom-space-box {
+    background: @module-bg;
+    color: @module-bg;
+}
+
+#workspaces,
+#clock.1,
+#clock.2,
+#clock.3,
+#clock.4,
+#clock.5,
+#custom-theme-toggle,
+#custom-sunset,
+#pulseaudio,
+#custom-network,
+#custom-gpuinfo,
+#custom-pomodoro,
+#memory,
+#cpu,
+#battery,
+#disk,
+#custom-vpninfo,
+#keyboard-state label.capslock.locked,
+#tray {
+    background: @module-bg;
+}
+
+#workspaces button {
+    padding: 0 2px;
+    color: @workspace-text;
+    background: transparent;
+}
+
+#workspaces button.visible {
+    background-color: @workspace-visible-bg;
+    color: @background;
+}
+
+#workspaces button.active {
+    background-color: @workspace-active-bg;
+    color: @background;
+}
+
+#workspaces button.focused {
+    background-color: @workspace-focused-bg;
+    color: @background;
+}
+
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: @workspace-hover-bg;
+    border: @workspace-hover-bg;
+    padding: 0 3px;
+    color: @background;
+}
+
+#pulseaudio {
+    color: @yellow;
+}
+
+#memory {
+    color: @magenta;
+}
+
+#cpu {
+    color: @red;
+}
+
+#battery {
+    color: @green;
+}
+
+#disk {
+    color: @yellow;
+}
+
+#keyboard-state label.capslock.locked {
+    color: @green;
+}
+
+#clock,
+#pulseaudio,
+#custom-sunset,
+#custom-gpuinfo,
+#custom-vpninfo,
+#custom-network,
+#custom-pomodoro,
+#memory,
+#cpu,
+#battery,
+#disk {
+    padding: 0 5px;
+}
+
+#keyboard-state label.capslock {
+    color: @red;
+    background: @module-bg;
+    padding: 0 0px;
+    margin: 0 0px;
+    font-size: 0px;
+}
+
+#keyboard-state label.capslock.locked {
+    color: @green;
+    background: @module-bg;
+    padding: 0 5px;
+    font-size: 16px;
+}
