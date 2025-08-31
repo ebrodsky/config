@@ -92,6 +92,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'ray-x/guihua.lua'
     Plug 'nvim-tree/nvim-tree.lua'
     Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-unimpaired'
     Plug 'lewis6991/gitsigns.nvim'
     Plug 'rktjmp/lush.nvim'
     Plug 'f-person/git-blame.nvim'
@@ -178,7 +179,7 @@ set noshowmode
 function! SetLightTheme() abort
   set background=light
   "let g:gruvbox_italics = 0
-  colorscheme evergarden-summer
+  colorscheme gruvbox-light-medium
   "colorscheme hybrid_material
   "colorscheme hybrid_reverse
   "colorscheme gruvbox-material
@@ -234,7 +235,7 @@ endfunction
 command! -nargs=1 Theme call SwitchTheme(<f-args>)
 
 "set light theme by calling the function
-call SetLightTheme()
+call SetDarkTheme()
 " Tokyo Night Light theme-inspired diff colors
 highlight DiffAdd    guifg=#2c6c40 guibg=#d5e5d6 gui=NONE
 highlight DiffDelete guifg=#ab5959 guibg=#f7e3e5 gui=NONE
@@ -433,8 +434,8 @@ require('lualine').setup({
 
 require 'evergarden'.setup {
   theme = {
-    variant = 'fall', -- 'winter'|'fall'|'spring'|'summer'
-    accent = 'green',
+    variant = 'spring', -- 'winter'|'fall'|'spring'|'summer'
+    accent = 'yellow',
   },
   editor = {
     transparent_background = false,
