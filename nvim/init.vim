@@ -61,7 +61,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'karoliskoncevicius/sacredforest-vim'           "THEME
     Plug 'wincent/base16-nvim'                           "THEME
     Plug 'tinted-theming/tinted-vim'                        "THEME
-    "Plug 'lifepillar/vim-gruvbox8', {'branch': 'neovim'}    "THEME
+    Plug 'lifepillar/vim-gruvbox8', {'branch': 'neovim'}    "THEME
     Plug 'aktersnurra/no-clown-fiesta.nvim'                 "THEME
     Plug 'lifepillar/vim-solarized8'                        "THEME
     "Plug 'p00f/alabaster.nvim'                              "THEME
@@ -108,6 +108,8 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
     Plug 'pwntester/octo.nvim'
+
+    Plug 'craigmac/vim-mermaid'
 
 
 call plug#end()
@@ -178,8 +180,8 @@ set noshowmode
 " Helper function to configure the light theme
 function! SetLightTheme() abort
   set background=light
-  "let g:gruvbox_italics = 0
-  colorscheme gruvbox-light-medium
+  let g:gruvbox_italics = 0
+  colorscheme gruvbox8
   "colorscheme hybrid_material
   "colorscheme hybrid_reverse
   "colorscheme gruvbox-material
