@@ -405,6 +405,16 @@ require("nvim-tree").setup()
 require("toggleterm").setup()
 require("octo").setup()
 
+local lazygit = require("toggleterm.terminal").Terminal:new({
+  cmd = "lazygit",
+  dir = "git_dir",
+  direction = "float",
+  float_opts = { border = "curved" },
+  hidden = true,
+})
+vim.keymap.set("n", "<leader>gg", function() lazygit:toggle() end,
+  { noremap = true, silent = true, desc = "Toggle lazygit" })
+
 -- OR setup with some options
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
