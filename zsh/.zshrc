@@ -183,3 +183,4 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=$PATH:/home/eytan/.spicetify
 export PATH=$PATH:/usr/local/bin/localstack
 export PATH=$PATH:/usr/bin/terraform
+export PATH=$PATH:/home/eytan/.cargo/bin/sea-orm-cli

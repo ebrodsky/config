@@ -2,11 +2,20 @@ lastupdatecheck: 0
 recentrepos:
     - /home/eytan/.config
     - /home/eytan/bitteryerba
+    - /home/eytan/nexusstudios/25176-ko-mpoc-server
     - /home/eytan/Notes
+    - /home/eytan/tree-sitter-sql
+    - /home/eytan/bridge/bridge-api
+    - /home/eytan/.vim/plugged/onenord.nvim
+    - /home/eytan/cb-orderbook
+    - /home/eytan/ebooks
+    - /home/eytan/blog_stuff
+    - /home/eytan/resume
+    - /home/eytan/aoc2024solns/aoc2024d2
+    - /home/eytan/aoc2024solns/aoc2024d1
     - /home/eytan/aoc2024solns/aoc2024d6
     - /home/eytan/aoc2024solns/aoc2024d5
     - /home/eytan/syndica-takehome
-    - /home/eytan/bridge/bridge-api
     - /home/eytan/ebrodsky.github.io
     - /home/eytan/portfolio
     - /home/eytan/froskr/exchange-api
@@ -19,7 +28,6 @@ recentrepos:
     - /home/eytan/.config/nvim/themes/vim-gruvbox8
     - /home/eytan/bridge/bridge-sync
     - /home/eytan/bridge/bridge-docker-dev
-    - /home/eytan/resume
     - /home/eytan/bridge/bridge
     - /home/eytan/bridge/bridge-local/ui/bridge-ui
     - /home/eytan/bridge/bridge-local
@@ -37,14 +45,29 @@ recentrepos:
     - /home/eytan/downstream-work/schema-netapp
     - /home/eytan/downstream-work/schema-hpi-livingstudio
 startuppopupversion: 5
-lastversion: 0.50.0
+didshowhunkstaginghint: true
+lastversion: 0.61.1
 customcommandshistory:
     - w
 hidecommandlog: true
-ignorewhitespaceindiffview: true
-diffcontextsize: 0
-renamesimilaritythreshold: 50
-localbranchsortorder: recency
-remotebranchsortorder: alphabetical
-gitlogorder: topo-order
-gitlogshowgraph: always
+githubPullRequests:
+    /home/eytan/.config: []
+    /home/eytan/bitteryerba:
+        - headRefName: rust-futures
+          number: 3
+          title: .
+          state: MERGED
+          url: https://github.com/ebrodsky/bitteryerba/pull/3
+          headRepositoryOwner: ebrodsky
+        - headRefName: rust-futures
+          number: 2
+          title: Rust futures
+          state: MERGED
+          url: https://github.com/ebrodsky/bitteryerba/pull/2
+          headRepositoryOwner: ebrodsky
+        - headRefName: rust-futures
+          number: 1
+          title: rust futures
+          state: MERGED
+          url: https://github.com/ebrodsky/bitteryerba/pull/1
+          headRepositoryOwner: ebrodsky

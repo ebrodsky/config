@@ -307,6 +307,9 @@ nmap <leader>A  <Plug>(coc-codeaction-selected)
 " Apply codeAction to current cursor position
 nmap <leader>a  <Plug>(coc-codeaction-cursor)
 
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -453,10 +456,10 @@ require 'evergarden'.setup {
   },
   style = {
     tabline = { 'reverse' },
-    search = { 'italic', 'reverse' },
-    incsearch = { 'italic', 'reverse' },
-    types = { 'bold' },
-    keyword = { 'bold' },
+    search = { 'italic' },
+    incsearch = { 'italic' },
+    types = { },
+    keyword = { },
     comment = { 'italic' },
   },
   overrides = {},
